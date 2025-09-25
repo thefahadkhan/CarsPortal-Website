@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="../car-dictionary/car-definitions.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <section class="car-definitions-hero">
+        <div class="car-definitions-hero-overlay"></div>
+        <div class="car-definitions-hero-content">
+            <h1 class="car-definitions-hero-title">Car Definitions</h1>
+            <div class="car-definitions-search-container">
+                <h2 class="car-definitions-search-title">Find Car Definitions</h2>
+                <div class="car-definitions-search-box">
+                    <input type="text" id="carDefinitionsSearchInput" placeholder="All Features" autocomplete="off">
+                    <button id="carDefinitionsSearchBtn" class="car-definitions-search-btn">SEARCH</button>
+                </div>
+                <div id="carDefinitionsDropdown" class="car-definitions-dropdown car-definitions-hidden">
+                    <div class="car-definitions-dropdown-header">
+                        <input type="text" id="carDefinitionsFilterInput" placeholder="Search..." class="car-definitions-filter-input">
+                    </div>
+                    <ul id="carDefinitionsFeaturesList" class="car-definitions-features-list"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="car-definitions-main-content">
+        <!-- Breadcrumb -->
+        <nav class="car-definitions-breadcrumb">
+            <a href="../../Index.html" class="car-definitions-breadcrumb-link">Home</a>
+            <span class="car-definitions-breadcrumb-separator">›</span>
+            <a href="#" class="car-definitions-breadcrumb-link">Used Cars</a>
+            <span class="car-definitions-breadcrumb-separator">›</span>
+            <span class="car-definitions-breadcrumb-current">Car Definitions</span>
+        </nav>
+
+        <!-- FAQ Section -->
+        <section class="car-definitions-faq-section">
+            <div id="carDefinitionsFaqContainer" class="car-definitions-faq-container"></div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../car-dictionary/car-definitions.js"></script>
+    <script src="/js/navbar.js"></script>
+</body>
+</html>

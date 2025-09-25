@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="../../used-tab-down/search-used-cars/style.css/used-search.css"
+    />
+    <link rel="stylesheet" href="../../navbar.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <!-- Search Bar Section - Full Width -->
+    <section class="search-section">
+      <div class="container">
+        <!-- Main Search Row -->
+        <div class="search-row">
+          <div class="search-field">
+            <div class="dropdown-wrapper">
+              <button class="dropdown" id="priceRangeBtn">
+                Price Range
+                <!-- <span class="search-down"> -->
+                <i class="fas fa-chevron-down"></i>
+                <!-- </span>  -->
+              </button>
+              <!-- Price Range Popup -->
+              <div class="popup-overlay" id="priceRangePopup">
+                <div class="popup-content">
+                  <div class="popup-header">
+                    <h3>Price Range (AED)</h3>
+                    <button class="close-btn">&times;</button>
+                  </div>
+                  <div class="popup-body">
+                    <div class="price-inputs">
+                      <div class="input-group">
+                        <label>Minimum:</label>
+                        <input
+                          type="number"
+                          placeholder="0"
+                          class="price-input"
+                        />
+                      </div>
+                      <span class="separator">-</span>
+                      <div class="input-group">
+                        <label>Maximum:</label>
+                        <input
+                          type="number"
+                          placeholder="To"
+                          class="price-input"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup-footer">
+                    <button class="reset-btn">Reset</button>
+                    <button class="done-btn">Done</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="search-field flex-1">
+            <div class="search-input-wrapper">
+              <button class="search-input" id="carMakeBtn">
+                <i class="fas fa-search"></i>
+                Select car make/brand
+              </button>
+              <!-- Car Make/Brand Popup -->
+              <div class="popup-overlay" id="carMakePopup">
+                <div class="popup-content large">
+                  <div class="popup-header">
+                    <h3>Select car make/brand</h3>
+                    <button class="close-btn">&times;</button>
+                  </div>
+                  <div class="popup-body">
+                    <div class="search-box">
+                      <input
+                        type="text"
+                        placeholder="Search by typing"
+                        class="brand-search"
+                      />
+                      <i class="fas fa-search"></i>
+                    </div>
+                    <div class="brand-list">
+                      <div class="brand-item">KAIYI</div>
+                      <div class="brand-item">Abarth</div>
+                      <div class="brand-item">Acura</div>
+                      <div class="brand-item">Al Damani</div>
+                      <div class="brand-item">Audi</div>
+                      <div class="brand-item">BMW</div>
+                      <div class="brand-item">Mercedes-Benz</div>
+                      <div class="brand-item">Toyota</div>
+                      <div class="brand-item">Honda</div>
+                      <div class="brand-item">Nissan</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="search-btn">Search</button>
+        </div>
+
+        <!-- Filter Row -->
+        <div class="filter-row">
+          <button class="filter-dropdown" id="seatsBtn">
+            Seats <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="filter-dropdown" id="bodyTypesBtn">
+            Body Types <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="filter-dropdown" id="transmissionBtn">
+            Transmission <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="filter-dropdown" id="cylindersBtn">
+            Cylinders <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="more-filters" id="moreFiltersBtn">
+            <i class="fas fa-sliders-h"></i> More Filters
+          </button>
+          <button class="clear-all">Clear All</button>
+        </div>
+
+        <!-- Seats Popup -->
+        <div class="popup-overlay" id="seatsPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Seats</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="seats-grid">
+                <div class="seat-option">2</div>
+                <div class="seat-option">4</div>
+                <div class="seat-option">5</div>
+                <div class="seat-option">7+</div>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Body Types Popup -->
+        <div class="popup-overlay" id="bodyTypesPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Body Type</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="body-types-grid">
+                <div class="body-type-option">
+                  <i class="fas fa-car"></i>
+                  <span>Sedan</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-truck"></i>
+                  <span>SUV</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car-side"></i>
+                  <span>Hatchback</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car-alt"></i>
+                  <span>Coupe</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-shuttle-van"></i>
+                  <span>Convertible</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-truck-pickup"></i>
+                  <span>Pickup</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-bus"></i>
+                  <span>Van</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car"></i>
+                  <span>Wagon</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-motorcycle"></i>
+                  <span>Crossover</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car-crash"></i>
+                  <span>Sports</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-truck-monster"></i>
+                  <span>Truck</span>
+                </div>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transmission Popup -->
+        <div class="popup-overlay" id="transmissionPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Transmission</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="transmission-options">
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="transmission"
+                    value="automatic"
+                  />
+                  <span class="checkmark"></span>
+                  Automatic
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="transmission" value="manual" />
+                  <span class="checkmark"></span>
+                  Manual
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="transmission" value="cvt" />
+                  <span class="checkmark"></span>
+                  CVT
+                </label>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cylinders Popup -->
+        <div class="popup-overlay" id="cylindersPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Cylinders</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="cylinders-grid">
+                <div class="cylinder-option">3</div>
+                <div class="cylinder-option">4</div>
+                <div class="cylinder-option">5</div>
+                <div class="cylinder-option">6</div>
+                <div class="cylinder-option">8</div>
+                <div class="cylinder-option">10</div>
+                <div class="cylinder-option">12</div>
+                <div class="cylinder-option">16</div>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- More Filters Popup -->
+        <div class="popup-overlay" id="moreFiltersPopup">
+          <div class="popup-content large">
+            <div class="popup-header">
+              <h3>More Filters</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="filter-section">
+                <label>Horsepower (bhp)</label>
+                <select class="filter-select">
+                  <option>Any</option>
+                  <option>Under 100</option>
+                  <option>100-200</option>
+                  <option>200-300</option>
+                  <option>300+</option>
+                </select>
+              </div>
+
+              <div class="filter-section">
+                <label>Fuel Type</label>
+                <div class="checkbox-grid">
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="petrol" />
+                    <span class="checkmark"></span>
+                    Petrol
+                  </label>
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="diesel" />
+                    <span class="checkmark"></span>
+                    Diesel
+                  </label>
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="electric" />
+                    <span class="checkmark"></span>
+                    Electric
+                  </label>
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="hybrid" />
+                    <span class="checkmark"></span>
+                    Hybrid
+                  </label>
+                </div>
+              </div>
+
+              <div class="filter-section">
+                <label>Brand Origin</label>
+                <select class="filter-select">
+                  <option>Any</option>
+                  <option>German</option>
+                  <option>Japanese</option>
+                  <option>American</option>
+                  <option>Korean</option>
+                  <option>Chinese</option>
+                </select>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guide to Car Prices and Specs Section -->
+    <section class="guide-section">
+      <div class="container">
+        <div class="section-layout">
+          <div class="left-content">
+            <div class="section-header">
+              <h2>Used cars for sale in UAE</h2>
+              <p>
+                34,753 used cars for sale found. Check Certified Pre-owned, New, and Used cars on Carsportal.
+              </p>
+              <div class="results-info">
+                <span>Showing 1 - 15 of 9,435 New Cars</span>
+                <div class="sort-by">
+                  <span>Sort:</span>
+                  <select class="sort-dropdown">
+                    <option>Price Low > High</option>
+                    <option>Price High > Low</option>
+                    <option>Year New > Old</option>
+                    <option>Year Old > New</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Car Cards -->
+            <div class="car-cards">
+              <!-- Car Card 1 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="../../images/cars/webp_slide_show_rs6_Avant.webp"
+                    alt="Audi RS6 Avant"
+                  />
+                  <div class="price-badge">Price Coming Soon</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Audi RS6 Avant 2020 4.0L TFSI V8 quattro</h3>
+                    <p>
+                      One of the 1 versions available you can find in the UAE
+                      for the all-new Audi RS6 Avant that competes with Audi RS6
+                      Avant Performance and has a starting price of AED.
+                    </p>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-tachometer-alt"></i> 4.0 l</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-view-detail">View Detail</button>
+                    <button class="btn-used-cars">Used Cars for Sale</button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare1" />
+                      <label for="compare1">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 2 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="../../images/cars/webp_slide_show_eqv.webp"
+                    alt="Haval H2"
+                  />
+                  <div class="price-badge discontinued">AED DISCONTINUED</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Mercedes-Benz EQV 2020 6 seater</h3>
+                    <p>
+                      With a fuel economy of liters per every hundred kilometers
+                      the Mercedes-Benz EQV 6 seater is a good option for those
+                      who are in the market for buying a New Car in UAE.
+                    </p>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 6 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-tachometer-alt"></i> 1.5 l</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-view-detail">View Detail</button>
+                    <button class="btn-used-cars">Used Cars for Sale</button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare2" />
+                      <label for="compare2">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 3 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="../../images/cars/webp_slide_show_nuova-renault-captur-2020.webp"
+                    alt="BMW X5"
+                  />
+                  <div class="price-badge">Price Coming Soon</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Renault Captur 2020 1.3T (155 HP)</h3>
+                    <p>
+                      With a fuel economy of liters per every hundred kilometers
+                      the Renault Captur 1.3T (155 HP) is a good option for
+                      those who are in the market for buying a New Car in UAE.
+                    </p>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-tachometer-alt"></i> 1.2</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-view-detail">View Detail</button>
+                    <button class="btn-used-cars">Used Cars for Sale</button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare3" />
+                      <label for="compare3">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 4 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="../../images/cars/webp_slide_show_nuova-renault-captur-2020.webp"
+                    alt="BMW X5"
+                  />
+                  <div class="price-badge">Price Coming Soon</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Renault Captur 2020 1.3T (155 HP)</h3>
+                    <p>
+                      With a fuel economy of liters per every hundred kilometers
+                      the Renault Captur 1.3T (155 HP) is a good option for
+                      those who are in the market for buying a New Car in UAE.
+                    </p>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-tachometer-alt"></i> 1.2</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-view-detail">View Detail</button>
+                    <button class="btn-used-cars">Used Cars for Sale</button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare3" />
+                      <label for="compare3">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 5 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="../../images/cars/webp_slide_show_01.webp"
+                    alt="Toyota Camry"
+                  />
+                  <div class="price-badge">Price Coming Soon</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Haval H2 2020 1.5T Intelligent</h3>
+                    <p>
+                      One of the 1 versions available you can find in the UAE
+                      for the all-new Haval H2 that competes with Mini
+                      Countryman and has a starting price of AED DISCONTINUED.
+                    </p>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-tachometer-alt"></i> 2.5 l</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-view-detail">View Detail</button>
+                    <button class="btn-used-cars">Used Cars for Sale</button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare5" />
+                      <label for="compare5">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 6 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="../../images/cars/webp_slide_show_Untitled (1).webp"
+                    alt="Toyota Camry"
+                  />
+                  <div class="price-badge">Price Coming Soon</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Aston Martin Valhalla 2020 AM-RB 003 V6 Hypercar</h3>
+                    <p>
+                      This New Aston Martin Valhalla AM-RB 003 V6 Hypercar is
+                      one of the 1 versions available you can find in the UAE.
+                      Has a top speed of KM/h and seats people.
+                    </p>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-tachometer-alt"></i> 2.5 l</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-view-detail">View Detail</button>
+                    <button class="btn-used-cars">Used Cars for Sale</button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare5" />
+                      <label for="compare5">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 7 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="../../images/cars/webp_slide_show_Untitled.webp"
+                    alt="Toyota Camry"
+                  />
+                  <div class="price-badge">Price Coming Soon</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Hyundai Ioniq 5 2020 EV</h3>
+                    <p>
+                      This New Hyundai Ioniq 5 EV is one of the 1 versions
+                      available you can find in the UAE. Has a top speed of KM/h
+                      and seats people.
+                    </p>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-tachometer-alt"></i> 2.5 l</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-view-detail">View Detail</button>
+                    <button class="btn-used-cars">Used Cars for Sale</button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare5" />
+                      <label for="compare5">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 8 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="../../images/cars/webp_slide_show_Suzuki_Swift_Sport_2019__1_.webp"
+                    alt="Toyota Camry"
+                  />
+                  <div class="price-badge">Price Coming Soon</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Suzuki Swift Sport 2020 1.4L (140 HP)</h3>
+                    <p>
+                      With a fuel economy of 6.1 liters per every hundred
+                      kilometers the Suzuki Swift Sport 1.4L (140 HP) is a good
+                      option for those who are in the market for buying a New
+                      Car
+                    </p>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-tachometer-alt"></i> 2.5 l</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-view-detail">View Detail</button>
+                    <button class="btn-used-cars">Used Cars for Sale</button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare5" />
+                      <label for="compare5">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-content">
+            <!-- Empty space as requested -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- People Also Search For Section -->
+    <section class="people-search-section">
+      <div class="container">
+        <div class="section-layout">
+          <div class="left-content">
+            <h2>People also search for</h2>
+
+            <div class="search-category">
+              <h3>Used Cars</h3>
+              <div class="search-links">
+                <a href="#">Used cars in Dubai (17730)</a>
+                <a href="#">Used cars in Ajman (3124)</a>
+                <a href="#">Used cars in Fujairah (2346)</a>
+                <a href="#">Used cars in Sharjah (5989)</a>
+              </div>
+            </div>
+
+            <div class="search-category">
+              <h3>Used cars by budget</h3>
+              <div class="search-links">
+                <a href="#">Used cars under 30000 AED (11968)</a>
+                <a href="#">Used cars under 50000 AED (20418)</a>
+                <a href="#">Used cars under 70000 AED (24377)</a>
+              </div>
+            </div>
+
+            <div class="search-category">
+              <h3>Used cars by Body Shape</h3>
+              <div class="search-links">
+                <a href="#">Used SUV cars (16384)</a>
+                <a href="#">Used Sedan cars (13281)</a>
+                <a href="#">Used Coupe cars (1669)</a>
+                <a href="#">Used Hatchback cars (2368)</a>
+              </div>
+            </div>
+
+            <div class="search-category">
+              <h3>Popular used cars brands</h3>
+              <div class="search-links">
+                <a href="#">Toyota (4323)</a>
+                <a href="#">Mercedes-Benz (2406)</a>
+                <a href="#">Nissan (5444)</a>
+                <a href="#">Lexus (1778)</a>
+                <a href="#">BMW (1262)</a>
+              </div>
+            </div>
+
+            <div class="search-category">
+              <h3>Used Chinese cars</h3>
+              <div class="search-links">
+                <a href="#">Used Chinese cars in Dubai (578)</a>
+                <a href="#">Used Chinese cars in Ajman (49)</a>
+                <a href="#">Used Chinese cars in Sharjah (71)</a>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <span class="page active">1</span>
+              <a href="#" class="page">2</a>
+              <a href="#" class="page">3</a>
+              <a href="#" class="page">4</a>
+              <a href="#" class="page">5</a>
+              <span class="dots">...</span>
+              <a href="#" class="page">492</a>
+              <a href="#" class="page">Next ></a>
+            </div>
+          </div>
+          <div class="right-content">
+            <!-- Empty space as requested -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Car Brands Section -->
+    <section class="brands-section">
+      <div class="brands-container">
+        <h2>Popular brands in UAE - Prices, Specs & Features</h2>
+
+        <div class="brands-grid" id="brandsGrid">
+          <!-- Brands will be populated by JavaScript -->
+        </div>
+
+        <div class="show-more-container">
+          <button
+            class="show-more-btn"
+            id="showMoreBtn"
+            onclick="toggleShowMore()"
+          >
+            Show More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="../../used-tab-down/search-used-cars/js/used-search.js"></script>
+    <script src="../../navbar.js"></script>
+  </body>
+</html>

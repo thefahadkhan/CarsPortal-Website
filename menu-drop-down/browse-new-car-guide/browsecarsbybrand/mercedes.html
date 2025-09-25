@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="../browsecarsbybrand/stylecss/mercedes.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
+  </head>
+
+  <body>
+    <!-- Navbar Section -->
+    <div id="navbar"></div>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-banner">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Your Journey Starts Here.</h1>
+          <p>Powered by AI Search. Driven by Real Buyers.</p>
+          <button class="hero-btn" onclick="scrollToSearch()">
+            Start Your AI Car Search
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toyota Cars Guide Section -->
+    <section class="toyota-cars-guide-wrapper">
+      <div class="container">
+        <h1 class="toyota-main-heading">
+          2025 and 2024 Mercedes-Benz cars Guide - Prices and Specs in UAE
+        </h1>
+        <p class="toyota-guide-subtitle">
+          Check
+          <span class="highlight-text"
+            >New cars for sale, Certified Pre-owned</span
+          >
+          and <span class="highlight-text">Used cars for sale</span> on
+          Yallamoto.
+        </p>
+
+        <!-- Tabs -->
+        <div class="toyota-tab-navigation">
+          <button class="toyota-tab-button toyota-tab-active" data-tab="2025">
+            Mercedes-Benz 2025 Models
+          </button>
+          <button class="toyota-tab-button" data-tab="2024">
+            Mercedes-Benz 2024 Models
+          </button>
+        </div>
+
+        <!-- Car Cards Container -->
+        <div class="toyota-cards-container">
+          <button class="toyota-nav-button toyota-prev-btn" id="toyotaPrevBtn">
+            ‹
+          </button>
+          <div class="toyota-cards-wrapper">
+            <!-- 2025 Models -->
+            <div
+              class="toyota-tab-content toyota-content-active"
+              id="toyotaTab2025"
+            >
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/webp_slide_show_2023-Toyota-Sequoia-Exterior_01.webp"
+                    alt="Toyota Sequoia 2025"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz Maybach 2025</h3>
+                <p class="toyota-car-price">From AED 355,000</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/webp_slide_show_the-2020-jdm-toyota-supra-will-get-2.0-l-four-cylinder-engine.webp"
+                    alt="Toyota Supra 2025"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz G-Class 2025</h3>
+                <p class="toyota-car-price">From AED 229,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/1ITO2UEM.webp"
+                    alt="Toyota Granvia 2025"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz S-Class 2025</h3>
+                <p class="toyota-car-price">From AED 211,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/webp_slide_show_2023_Toyota_Crowm_Exterio_01.webp"
+                    alt="Toyota Crown 2025"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz GLS 2025</h3>
+                <p class="toyota-car-price">From AED 199,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/webp_slide_show_2024-land-cruiser-70-hard-top-exterior-01.webp"
+                    alt="Toyota Land Cruiser 2025"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz EQS SUV 2025</h3>
+                <p class="toyota-car-price">From AED 289,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★★</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/OIP.jpg"
+                    alt="Toyota Camry 2025"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz GLE-Class 2025</h3>
+                <p class="toyota-car-price">From AED 125,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/OIP (1).jpg"
+                    alt="Toyota Highlander 2025"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz Maybach GLS 2025</h3>
+                <p class="toyota-car-price">From AED 185,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/OIP (2).jpg"
+                    alt="Toyota Prado 2025"
+                  />
+                </div>
+                <h3 class="toyota-car-title">
+                  Mercedes-Benz S 63 AMG Coupe 2025
+                </h3>
+                <p class="toyota-car-price">From AED 215,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★★</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2024 Models -->
+            <div class="toyota-tab-content" id="toyotaTab2024">
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/Ice_Cap.png"
+                    alt="Toyota Sequoia 2024"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz Maybach 2024</h3>
+                <p class="toyota-car-price">From AED 345,000</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/OIP (3).jpg"
+                    alt="Toyota Supra 2024"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz G-Class 2024</h3>
+                <p class="toyota-car-price">From AED 219,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/toyota-granvia-2024-1-slider-arawheels-1692808489.webp"
+                    alt="Toyota Granvia 2024"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz S-Class 2024</h3>
+                <p class="toyota-car-price">From AED 201,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/OIP (4).jpg"
+                    alt="Toyota Crown 2024"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz GLS 2025 2024</h3>
+                <p class="toyota-car-price">From AED 189,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/OIP (5).jpg"
+                    alt="Toyota Land Cruiser 2024"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz EQS SUV 2024</h3>
+                <p class="toyota-car-price">From AED 279,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★★</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/68aa3365-261b-4b91-8b00-c68dd5e73fb5.webp"
+                    alt="Toyota Camry 2024"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz GLE-Class 2024</h3>
+                <p class="toyota-car-price">From AED 115,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/Hybrid-LE.png"
+                    alt="Toyota Highlander 2024"
+                  />
+                </div>
+                <h3 class="toyota-car-title">Mercedes-Benz Maybach GLS 2024</h3>
+                <p class="toyota-car-price">From AED 175,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★☆</span>
+                </div>
+              </div>
+
+              <div class="toyota-car-card">
+                <div class="toyota-car-image">
+                  <img
+                    src="../../../images/cars/OIP (6).jpg"
+                    alt="Toyota Prado 2024"
+                  />
+                </div>
+                <h3 class="toyota-car-title">
+                  Mercedes-Benz S 63 AMG Coupe 2024
+                </h3>
+                <p class="toyota-car-price">From AED 205,900</p>
+                <div class="toyota-car-rating">
+                  <span class="toyota-rating-stars">★★★★★</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="toyota-nav-button toyota-next-btn" id="toyotaNextBtn">
+            ›
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Used Toyota by Price Section -->
+    <section class="used-toyota">
+      <div class="container">
+        <h2>Used Mercedes-Benz by price in UAE</h2>
+        <div class="price-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Used Cars</th>
+                <th>Starting Price</th>
+                <th>Maximum Price</th>
+                <th>Average Price</th>
+                <th>Cars Available</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span>Used Mercedes-Benz 2026</span></td>
+                <td>AED 45,000</td>
+                <td>AED 140,000</td>
+                <td>AED 84,916</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td><span>Used Mercedes-Benz 2025</span></td>
+                <td>AED 9,885</td>
+                <td>AED 399,000</td>
+                <td>AED 180,099</td>
+                <td>116</td>
+              </tr>
+              <tr>
+                <td><span>Used Mercedes-Benz 2024</span></td>
+                <td>AED 30,000</td>
+                <td>AED 365,000</td>
+                <td>AED 146,837</td>
+                <td>148</td>
+              </tr>
+              <tr>
+                <td><span>Used Mercedes-Benz 2023</span></td>
+                <td>AED 205</td>
+                <td>AED 345,000</td>
+                <td>AED 107,744</td>
+                <td>244</td>
+              </tr>
+              <tr>
+                <td><span>Used Mercedes-Benz 2022</span></td>
+                <td>AED 50,000</td>
+                <td>AED 329,999</td>
+                <td>AED 95,176</td>
+                <td>261</td>
+              </tr>
+              <tr>
+                <td><span>Used Mercedes-Benz 2021</span></td>
+                <td>AED 29,500</td>
+                <td>AED 300,000</td>
+                <td>AED 95,831</td>
+                <td>196</td>
+              </tr>
+              <tr>
+                <td><span>Used Mercedes-Benz 2020</span></td>
+                <td>AED 27,999</td>
+                <td>AED 249,000</td>
+                <td>AED 76,972</td>
+                <td>229</td>
+              </tr>
+              <tr>
+                <td><span>Used Mercedes-Benz 2019</span></td>
+                <td>AED 20,000</td>
+                <td>AED 250,000</td>
+                <td>AED 69,115</td>
+                <td>211</td>
+              </tr>
+              <tr>
+                <td><span>Used Mercedes-Benz 2018</span></td>
+                <td>AED 2,500</td>
+                <td>AED 254,000</td>
+                <td>AED 71,355</td>
+                <td>164</td>
+              </tr>
+              <tr>
+                <td><span>Used Mercedes-Benz 2017</span></td>
+                <td>AED 15,500</td>
+                <td>AED 189,000</td>
+                <td>AED 60,808</td>
+                <td>197</td>
+              </tr>
+              <tr>
+                <td><span>Used Mercedes-Benz 2016</span></td>
+                <td>AED 2,100</td>
+                <td>AED 175,000</td>
+                <td>AED 52,718</td>
+                <td>227</td>
+              </tr>
+              <tr>
+                <td><span>Used Mercedes-Benz 2015</span></td>
+                <td>AED 12,000</td>
+                <td>AED 249,000</td>
+                <td>AED 41,509</td>
+                <td>407</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- People Also Search For Section -->
+    <section class="search-suggestions">
+      <div class="container">
+        <h2>People also search for</h2>
+
+        <div class="search-category">
+          <h3>New Mercedes-Benz cars for sale By location</h3>
+          <div class="tags">
+            <span class="tag"
+              >New Mercedes-Benz cars for sale in UAE (1191)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale in Dubai (105)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale in Ajman (4)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale in Fujairah (1)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale in Sharjah (12)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale in Abu Dhabi (3)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale in Al Ain (1)</span
+            >
+          </div>
+        </div>
+
+        <div class="search-category">
+          <h3>New Mercedes-Benz cars for sale By Budget</h3>
+          <div class="tags">
+            <span class="tag"
+              >New Mercedes-Benz cars for sale under 30000 AED (3)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale under 50000 AED (5)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale under 70000 AED (10)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale under 100000 AED (11)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale under 120000 AED (13)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale under 150000 AED (21)</span
+            >
+            <span class="tag"
+              >New Mercedes-Benz cars for sale under 250000 AED (56)</span
+            >
+          </div>
+        </div>
+
+        <div class="search-category">
+          <h3>Used Mercedes-Benz cars for sale in UAE</h3>
+          <div class="tags">
+            <span class="tag"
+              >Used Mercedes-Benz cars for sale in UAE (32641)</span
+            >
+            <span class="tag"
+              >Used Mercedes-Benz cars for sale in Dubai (1306)</span
+            >
+            <span class="tag"
+              >Used Mercedes-Benz cars for sale in Ajman (178)</span
+            >
+            <span class="tag"
+              >Used Mercedes-Benz cars for sale in Fujairah (15)</span
+            >
+            <span class="tag"
+              >Used Mercedes-Benz cars for sale in Sharjah (415)</span
+            >
+            <span class="tag"
+              >Used Mercedes-Benz cars for sale in Ras Al Khaimah (21)</span
+            >
+            <span class="tag"
+              >Used Mercedes-Benz cars for sale in Abu Dhabi (332)</span
+            >
+            <span class="tag"
+              >Used Mercedes-Benz cars for sale in Al Ain (78)</span
+            >
+            <span class="tag"
+              >Used Mercedes-Benz cars for sale in Umm al Quwain (3)</span
+            >
+            <span class="tag">New German cars for sale in UAE (212)</span>
+            <span class="tag"
+              >Certified Mercedes-Benz Pre-owned for sale in UAE (7)</span
+            >
+            <span class="tag">Used Chinese cars for sale in Dubai (394)</span>
+            <span class="tag">New Mercedes-Benz cars prices in UAE</span>
+            <span class="tag">Used cars in Dubai (18562)</span>
+            <span class="tag">Used cars in UAE (55061)</span>
+            <span class="tag">Used Chinese cars in UAE (971)</span>
+            <span class="tag">Used Electric cars in UAE (373)</span>
+            <span class="tag">Used cars sold by car dealers in UAE (6055)</span>
+            <span class="tag">Certified car dealers in UAE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Car News Section -->
+    <section class="news-section">
+      <div class="container">
+        <div class="news-header">
+          <h2>Car News and Reviews in UAE</h2>
+          <button class="view-all-btn" onclick="viewAllNews()">View All</button>
+        </div>
+
+        <div class="news-content">
+          <div class="featured-news">
+            <div class="featured-article">
+              <img
+                src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="SOUEAST S06"
+                class="featured-image"
+              />
+              <div class="featured-content">
+                <span class="featured-tag"
+                  >2024 Mercedes-Benz GLS-Class Review: A Luxurious SUV
+                  Experience</span
+                >
+                <p class="featured-description">
+                  Discover the features and performance of the 2024
+                  Mercedes-Benz GLS...
+                </p>
+                <a href="#" class="read-more-link">Read More »</a>
+                <div class="article-meta">
+                  <span>By: Dina</span>|
+                  <span>2025-03-18</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="news-sidebar">
+            <div class="news-item">
+              <img
+                src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Infiniti QX50"
+                class="news-thumbnail"
+              />
+              <div class="news-content-text">
+                <h3>
+                  Mercedes-Benz AMG G63 Onyx G7X Review - Luxury SUV Unleashed
+                </h3>
+                <p>
+                  Explore the features and performance of the Mercedes-Benz AMG
+                  G63 O...
+                </p>
+                <span class="news-category">Read More »</span>
+                <div class="news-meta">
+                  <span>By: Dina</span>
+                  <span>2025-03-14</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="news-item">
+              <img
+                src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Jeep Grand Wagoneer"
+                class="news-thumbnail"
+              />
+              <div class="news-content-text">
+                <h3>Mercedes-Benz GLE 450 Review: The Evergreen Luxury SUV</h3>
+                <p>
+                  Explore the features, performance, and luxury of the
+                  Mercedes-Benz ...
+                </p>
+                <span class="news-category">Read More »</span>
+                <div class="news-meta">
+                  <span>By: Dina</span>
+                  <span>2025-03-14</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="news-item">
+              <img
+                src="https://images.pexels.com/photos/193999/pexels-photo-193999.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Tubeless Tire Guide"
+                class="news-thumbnail"
+              />
+              <div class="news-content-text">
+                <h3>
+                  Mercedes-Benz E300 Review — A Well-Balanced Luxury Sedan
+                </h3>
+                <p>
+                  Explore the features, performance, and comfort of the
+                  Mercedes-Benz...
+                </p>
+                <span class="news-category">Read More »</span>
+                <div class="news-meta">
+                  <span>By: Dina</span>
+                  <span>2025-03-14</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Toyota UAE Section -->
+    <section class="about-toyota">
+      <div class="container">
+        <h2>About Nissan UAE</h2>
+        <div class="about-content">
+          <div class="toyota-logo">
+            <img
+              src="../../../images/cars/Nissan-brand-logo_black-on-white.png"
+              alt="Nissan Logo"
+            />
+          </div>
+          <div class="about-text">
+            <p>
+              In the UAE, Mercedes-Benz is currently present with 38 models. The
+              most affordable model is the
+              <strong>Mercedes-Benz A-Class,</strong> with a starting price of
+              AED 219,900. For those looking to buy a more luxurious option,
+              Mercedes-Benz offers the
+              <strong>Mercedes-Benz Maybach S-Class</strong>, priced at AED
+              1,183,900.
+            </p>
+            <p>
+              The inventory that Mercedes-Benz is selling in the UAE includes a
+              total of 5 <strong>Convertibles, 7 Coupes, 1 Crossover,</strong> 1
+              <strong>Hatchback, 2 Mini Vans, 8 Sedans,</strong> and 12 SUVs.
+              The total inventory value for the German brand is AED 13,559,300,
+              leading to an average price of AED 356,823 per vehicle.
+            </p>
+            <p>
+              We currently have 142 nearly new Mercedes-Benz models from 2022
+              and 2023. The most affordable used
+              <strong>Mercedes-Benz</strong> from 2022 is the Used...
+            </p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div id="footer"></div>
+
+    <script src="../browsecarsbybrand/js/mercedes.js"></script>
+    <script src="/js/navbar.js"></script>
+  </body>
+</html>

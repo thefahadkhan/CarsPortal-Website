@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="popular.css" />
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <title>Car Portal NEW</title>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <div id="navbar"></div>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-banner">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Your Journey Starts Here.</h1>
+          <p>Powered by AI Search. Driven by Real Buyers.</p>
+          <button class="hero-btn" onclick="scrollToSearch()">
+            Start Your AI Car Search
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section" id="searchSection">
+      <div class="search-container">
+        <div class="search-bar">
+          <div class="search-input-group">
+            <input
+              type="text"
+              id="brandInput"
+              placeholder="Select car make/brand"
+              readonly
+              onclick="openBrandModal()"
+            />
+            <span class="search-icon"><i class="ri-search-line"></i></span>
+          </div>
+
+          <div class="price-dropdown">
+            <button
+              type="button"
+              class="price-dropdown-btn"
+              id="priceDropdownBtn"
+              onclick="togglePriceDropdown()"
+            >
+              <span id="priceDropdownText">Price Range</span>
+              <span class="price-dropdown-arrow"
+                ><i class="ri-arrow-down-s-line"></i
+              ></span>
+            </button>
+
+            <div class="price-dropdown-panel" id="priceDropdownPanel">
+              <div class="price-panel-header">Price Range (AED)</div>
+
+              <div class="price-inputs-row">
+                <div class="price-input-col">
+                  <label>Minimum:</label>
+                  <input
+                    type="number"
+                    id="minPriceInput"
+                    placeholder="0"
+                    min="0"
+                  />
+                </div>
+                <div class="price-separator-dash">-</div>
+                <div class="price-input-col">
+                  <label>Maximum:</label>
+                  <input
+                    type="number"
+                    id="maxPriceInput"
+                    placeholder="To"
+                    min="0"
+                  />
+                </div>
+              </div>
+
+              <div class="price-options">
+                <div class="price-option">
+                  <input
+                    type="radio"
+                    id="price10000"
+                    name="priceRange"
+                    value="10000"
+                  />
+                  <label for="price10000">10,000</label>
+                </div>
+                <div class="price-option">
+                  <input
+                    type="radio"
+                    id="price20000"
+                    name="priceRange"
+                    value="20000"
+                  />
+                  <label for="price20000">20,000</label>
+                </div>
+                <div class="price-option">
+                  <input
+                    type="radio"
+                    id="price30000"
+                    name="priceRange"
+                    value="30000"
+                  />
+                  <label for="price30000">30,000</label>
+                </div>
+                <div class="price-option">
+                  <input
+                    type="radio"
+                    id="price40000"
+                    name="priceRange"
+                    value="40000"
+                  />
+                  <label for="price40000">40,000</label>
+                </div>
+                <div class="price-option">
+                  <input
+                    type="radio"
+                    id="price50000"
+                    name="priceRange"
+                    value="50000"
+                  />
+                  <label for="price50000">50,000</label>
+                </div>
+                <div class="price-option">
+                  <input
+                    type="radio"
+                    id="price60000"
+                    name="priceRange"
+                    value="60000"
+                  />
+                  <label for="price60000">60,000</label>
+                </div>
+              </div>
+
+              <div class="price-panel-actions">
+                <button
+                  type="button"
+                  class="price-reset-btn"
+                  onclick="resetPriceSelection()"
+                >
+                  Reset
+                </button>
+                <button
+                  type="button"
+                  class="price-done-btn"
+                  onclick="applyPriceSelection()"
+                >
+                  Done
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button class="search-btn" onclick="performSearch()">Search</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Car Brands Section -->
+    <section class="brands-section">
+      <div class="brands-container">
+        <h2>Popular brands in UAE - Prices, Specs & Features</h2>
+
+        <div class="brands-grid" id="brandsGrid">
+          <!-- Brands will be populated by JavaScript -->
+        </div>
+
+        <div class="show-more-container">
+          <button
+            class="show-more-btn"
+            id="showMoreBtn"
+            onclick="toggleShowMore()"
+          >
+            Show More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cars For Sale in UAE Section -->
+    <section class="cars-sale-section">
+      <div class="cars-sale-container">
+        <div class="cars-sale-header">
+          <div class="header-content">
+            <h2>Cars For Sale in UAE</h2>
+            <p>
+              Check New cars for sale, Certified Pre-owned and Used cars for
+              sale on YallaMotor.
+            </p>
+          </div>
+          <div class="view-all-container">
+            <button class="view-all-btn" onclick="viewAllCars()">
+              View All
+            </button>
+          </div>
+        </div>
+
+        <div class="cars-sale-tabs">
+          <button class="tab-btn active" data-tab="new-cars">
+            NEW CARS FOR SALE
+          </button>
+          <button class="tab-btn" data-tab="used-cars">
+            USED CARS FOR SALE
+          </button>
+          <button class="tab-btn" data-tab="certified">
+            CERTIFIED PRE-OWNED
+          </button>
+          <button class="tab-btn" data-tab="dealers">BY CAR DEALERS</button>
+          <button class="tab-btn" data-tab="individual">
+            BY INDIVIDUAL SELLERS
+          </button>
+        </div>
+
+        <div class="cars-carousel-container">
+          <button
+            class="carousel-nav prev"
+            onclick="scrollCarsCarousel(-1)"
+            id="carsPrevBtn"
+          >
+            <span class="nav-icon">‹</span>
+          </button>
+          <button
+            class="carousel-nav next"
+            onclick="scrollCarsCarousel(1)"
+            id="carsNextBtn"
+          >
+            <span class="nav-icon">›</span>
+          </button>
+
+          <div class="cars-carousel" id="carsCarousel">
+            <!-- Cars will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Cars Videos Section -->
+    <section class="videos-section">
+      <div class="videos-container">
+        <div class="videos-header">
+          <div class="videos-title-section">
+            <h2>New Cars Videos in UAE</h2>
+            <p>Keep yourself updated with reviews from experts.</p>
+            <div class="subscribe-section">
+              <span>Subscribe Now:</span>
+              <button
+                class="youtube-subscribe-btn"
+                onclick="subscribeYoutube()"
+              >
+                <span class="youtube-icon"><i class="ri-movie-fill"></i></span>
+                <span>YouTube</span>
+                <span class="subscriber-count">71K</span>
+              </button>
+            </div>
+          </div>
+          <button class="view-all-btn" onclick="viewAllVideos()">
+            View All
+          </button>
+        </div>
+
+        <div class="videos-grid" id="videosGrid">
+          <!-- Videos will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Car News and Reviews Section -->
+    <section class="news-section">
+      <div class="news-container">
+        <div class="news-header">
+          <h2>Car News and Reviews in UAE</h2>
+          <button class="view-all-btn" onclick="viewAllNews()">View All</button>
+        </div>
+
+        <div class="news-content">
+          <div class="featured-news">
+            <div class="featured-article">
+              <img
+                src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="SOUEAST S06"
+                class="featured-image"
+              />
+              <div class="featured-content">
+                <span class="featured-tag"
+                  >SOUEAST S06 in the UAE: Price, Specs, and Why It's Our
+                  Compact SUV to Watch in 2025</span
+                >
+                <p class="featured-description">
+                  SOUEAST SOUEAST reviews price, specs, time, features, safety
+                  and...
+                </p>
+                <a href="#" class="read-more-link">Read More »</a>
+                <div class="article-meta">
+                  <span>By: Ahmad Rashid Al Zaer</span>|
+                  <span>2025-03-18</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="news-sidebar">
+            <div class="news-item">
+              <img
+                src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Infiniti QX50"
+                class="news-thumbnail"
+              />
+              <div class="news-content-text">
+                <h3>
+                  2024 INFINITI QX50 SPORT: Redefining Luxury SUVs in the UAE
+                </h3>
+                <p>
+                  2024 INFINITI QX50 SPORT review for luxury SUVs and new
+                  luxury...
+                </p>
+                <span class="news-category">Road Tests</span>
+                <div class="news-meta">
+                  <span>By: Ahmad Rashid Al Zaer</span>
+                  <span>2025-03-14</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="news-item">
+              <img
+                src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Jeep Grand Wagoneer"
+                class="news-thumbnail"
+              />
+              <div class="news-content-text">
+                <h3>
+                  2024 Jeep Grand Wagoneer Price in UAE, Specs, and Release Date
+                </h3>
+                <p>
+                  About the 2024 Jeep Grand Wagoneer in UAE, price, release
+                  and...
+                </p>
+                <span class="news-category">Road Tests</span>
+                <div class="news-meta">
+                  <span>By: Ahmad Rashid Al Zaer</span>
+                  <span>2025-03-14</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="news-item">
+              <img
+                src="https://images.pexels.com/photos/193999/pexels-photo-193999.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="Tubeless Tire Guide"
+                class="news-thumbnail"
+              />
+              <div class="news-content-text">
+                <h3>
+                  How to Repair a Tube in a Tubeless Tire DIY Guide for UAE
+                  Drivers
+                </h3>
+                <p>
+                  Best Damage guides to learn to Repair a Tube in a Tubeless
+                  tire for...
+                </p>
+                <span class="news-category">Road Tests</span>
+                <div class="news-meta">
+                  <span>By: Ahmad Rashid Al Zaer</span>
+                  <span>2025-03-14</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dubai-prices-section">
+          <h3>Dubai Car Prices Today and UAE</h3>
+          <p>
+            If you are looking for the latest used car market in the UAE, you've
+            come to the right place. YallaMotor offers a comprehensive guide to
+            everything you need to know about new car prices in UAE market.
+            Whether you are considering an affordable car like Toyota, Hyundai,
+            or Nissan, or looking for a luxury option like Porsche, Dodge,
+            Mercedes or BMW, or even Chinese brands such as Hantov, Jetour or
+            Chery, you'll find all the information you need here.
+          </p>
+          <p>
+            Browse YallaMotor now to explore the latest cars, detailed
+            specifications, and high-quality images of the most popular models
+            in KSA. Buy your dream car with ease through YallaMotor, the leading
+            car marketplace for used and new cars.
+          </p>
+
+          <h4>YallaMotor UAE's #1 Platform for New Cars</h4>
+          <p>
+            If you're looking for the best website for buying cars, YallaMotor
+            and specifically YallaMotor used cars in UAE frequently search for
+            the car prices of popular models like Toyota Corolla, Nissan Patrol
+            and Jetour Dashing. On YallaMotor, you can compare car prices, as
+            well as YallaMotor has the widest selection of used cars in UAE, you
+            can easily check the prices of used cars. Don't miss out on any
+            opportunity when looking for your car and our specialists in UAE
+            will also reach out to you. YallaMotor also requires a free ad post
+            to sell your car. YallaMotor enables you with confidence and ease.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Selection Modal -->
+    <div class="modal-overlay" id="brandModal" onclick="closeBrandModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="modal-header">
+          <h3>Select car make/brand</h3>
+          <button class="modal-close" onclick="closeBrandModal()">×</button>
+        </div>
+
+        <div class="modal-search">
+          <input
+            type="text"
+            id="modalSearch"
+            placeholder="Search by typing"
+            oninput="filterBrands()"
+          />
+          <span class="modal-search-icon"><i class="ri-search-line"></i></span>
+        </div>
+
+        <div class="modal-brands-list" id="modalBrandsList">
+          <!-- Brands list will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div id="footer"></div>
+
+    <script src="popular.js"></script>
+    <script src="/js/navbar.js"></script>
+  </body>
+</html>

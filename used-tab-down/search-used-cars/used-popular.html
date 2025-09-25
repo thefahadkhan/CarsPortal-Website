@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="../../Used-tab-down/search-used-cars/Style.css/used-search.css"
+    />
+    <link rel="stylesheet" href="../../used-tab-down/search-used-cars/style.css/used-popular.css">
+    <link rel="stylesheet" href="/styles/navbar.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <!-- Search Bar Section - Full Width -->
+    <section class="search-section">
+      <div class="container">
+        <!-- Main Search Row -->
+        <div class="search-row">
+          <div class="search-field">
+            <div class="dropdown-wrapper">
+              <button class="dropdown" id="priceRangeBtn">
+                Price Range
+                <!-- <span class="search-down"> -->
+                <i class="fas fa-chevron-down"></i>
+                <!-- </span>  -->
+              </button>
+              <!-- Price Range Popup -->
+              <div class="popup-overlay" id="priceRangePopup">
+                <div class="popup-content">
+                  <div class="popup-header">
+                    <h3>Price Range (AED)</h3>
+                    <button class="close-btn">&times;</button>
+                  </div>
+                  <div class="popup-body">
+                    <div class="price-inputs">
+                      <div class="input-group">
+                        <label>Minimum:</label>
+                        <input
+                          type="number"
+                          placeholder="0"
+                          class="price-input"
+                        />
+                      </div>
+                      <span class="separator">-</span>
+                      <div class="input-group">
+                        <label>Maximum:</label>
+                        <input
+                          type="number"
+                          placeholder="To"
+                          class="price-input"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup-footer">
+                    <button class="reset-btn">Reset</button>
+                    <button class="done-btn">Done</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="search-field flex-1">
+            <div class="search-input-wrapper">
+              <button class="search-input" id="carMakeBtn">
+                <i class="fas fa-search"></i>
+                Select car make/brand
+              </button>
+              <!-- Car Make/Brand Popup -->
+              <div class="popup-overlay" id="carMakePopup">
+                <div class="popup-content large">
+                  <div class="popup-header">
+                    <h3>Select car make/brand</h3>
+                    <button class="close-btn">&times;</button>
+                  </div>
+                  <div class="popup-body">
+                    <div class="search-box">
+                      <input
+                        type="text"
+                        placeholder="Search by typing"
+                        class="brand-search"
+                      />
+                      <i class="fas fa-search"></i>
+                    </div>
+                    <div class="brand-list">
+                      <div class="brand-item">KAIYI</div>
+                      <div class="brand-item">Abarth</div>
+                      <div class="brand-item">Acura</div>
+                      <div class="brand-item">Al Damani</div>
+                      <div class="brand-item">Audi</div>
+                      <div class="brand-item">BMW</div>
+                      <div class="brand-item">Mercedes-Benz</div>
+                      <div class="brand-item">Toyota</div>
+                      <div class="brand-item">Honda</div>
+                      <div class="brand-item">Nissan</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="search-btn">Search</button>
+        </div>
+
+        <!-- Filter Row -->
+        <div class="filter-row">
+          <button class="filter-dropdown" id="seatsBtn">
+            Seats <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="filter-dropdown" id="bodyTypesBtn">
+            Body Types <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="filter-dropdown" id="transmissionBtn">
+            Transmission <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="filter-dropdown" id="cylindersBtn">
+            Cylinders <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="more-filters" id="moreFiltersBtn">
+            <i class="fas fa-sliders-h"></i> More Filters
+          </button>
+          <button class="clear-all">Clear All</button>
+        </div>
+
+        <!-- Seats Popup -->
+        <div class="popup-overlay" id="seatsPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Seats</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="seats-grid">
+                <div class="seat-option">2</div>
+                <div class="seat-option">4</div>
+                <div class="seat-option">5</div>
+                <div class="seat-option">7+</div>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Body Types Popup -->
+        <div class="popup-overlay" id="bodyTypesPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Body Type</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="body-types-grid">
+                <div class="body-type-option">
+                  <i class="fas fa-car"></i>
+                  <span>Sedan</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-truck"></i>
+                  <span>SUV</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car-side"></i>
+                  <span>Hatchback</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car-alt"></i>
+                  <span>Coupe</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-shuttle-van"></i>
+                  <span>Convertible</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-truck-pickup"></i>
+                  <span>Pickup</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-bus"></i>
+                  <span>Van</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car"></i>
+                  <span>Wagon</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-motorcycle"></i>
+                  <span>Crossover</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car-crash"></i>
+                  <span>Sports</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-truck-monster"></i>
+                  <span>Truck</span>
+                </div>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transmission Popup -->
+        <div class="popup-overlay" id="transmissionPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Transmission</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="transmission-options">
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="transmission"
+                    value="automatic"
+                  />
+                  <span class="checkmark"></span>
+                  Automatic
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="transmission" value="manual" />
+                  <span class="checkmark"></span>
+                  Manual
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="transmission" value="cvt" />
+                  <span class="checkmark"></span>
+                  CVT
+                </label>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cylinders Popup -->
+        <div class="popup-overlay" id="cylindersPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Cylinders</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="cylinders-grid">
+                <div class="cylinder-option">3</div>
+                <div class="cylinder-option">4</div>
+                <div class="cylinder-option">5</div>
+                <div class="cylinder-option">6</div>
+                <div class="cylinder-option">8</div>
+                <div class="cylinder-option">10</div>
+                <div class="cylinder-option">12</div>
+                <div class="cylinder-option">16</div>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- More Filters Popup -->
+        <div class="popup-overlay" id="moreFiltersPopup">
+          <div class="popup-content large">
+            <div class="popup-header">
+              <h3>More Filters</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="filter-section">
+                <label>Horsepower (bhp)</label>
+                <select class="filter-select">
+                  <option>Any</option>
+                  <option>Under 100</option>
+                  <option>100-200</option>
+                  <option>200-300</option>
+                  <option>300+</option>
+                </select>
+              </div>
+
+              <div class="filter-section">
+                <label>Fuel Type</label>
+                <div class="checkbox-grid">
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="petrol" />
+                    <span class="checkmark"></span>
+                    Petrol
+                  </label>
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="diesel" />
+                    <span class="checkmark"></span>
+                    Diesel
+                  </label>
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="electric" />
+                    <span class="checkmark"></span>
+                    Electric
+                  </label>
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="hybrid" />
+                    <span class="checkmark"></span>
+                    Hybrid
+                  </label>
+                </div>
+              </div>
+
+              <div class="filter-section">
+                <label>Brand Origin</label>
+                <select class="filter-select">
+                  <option>Any</option>
+                  <option>German</option>
+                  <option>Japanese</option>
+                  <option>American</option>
+                  <option>Korean</option>
+                  <option>Chinese</option>
+                </select>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Car Listings Section -->
+    <div class="car-listings-main-container">
+        <!-- Left Sidebar -->
+        <aside class="car-listings-left-sidebar">
+            <div class="car-listings-sidebar-header">
+                <h2>10,730 VEHICLES FOUND</h2>
+                <div class="car-listings-sidebar-tabs">
+                    <button class="car-listings-sidebar-tab-btn active" data-tab="filters">FILTERS</button>
+                    <button class="car-listings-sidebar-tab-btn" data-tab="search">SEARCH</button>
+                </div>
+            </div>
+
+            <!-- Filters Tab Content -->
+            <div id="car-listings-filters-tab" class="car-listings-sidebar-tab-content active">
+                <div class="car-listings-filters-container">
+                    <details class="car-listings-filter-section">
+                        <summary>Distance <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <div class="car-listings-slider-container">
+                                <input type="range" min="0" max="100" value="50" class="car-listings-slider" id="car-listings-distanceSlider">
+                                <div class="car-listings-range-labels">
+                                    <span>0 mi</span>
+                                    <span id="car-listings-distanceValue">50 mi</span>
+                                    <span>100+ mi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Vehicle Status <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> New</label>
+                            <label><input type="checkbox"> Used</label>
+                            <label><input type="checkbox"> Certified Pre-Owned</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Price <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <div class="car-listings-price-inputs">
+                                <input type="text" placeholder="Min" class="car-listings-price-input" id="car-listings-minPrice">
+                                <input type="text" placeholder="Max" class="car-listings-price-input" id="car-listings-maxPrice">
+                            </div>
+                            <div class="car-listings-slider-container">
+                                <input type="range" min="0" max="200000" value="100000" class="car-listings-slider" id="car-listings-priceSlider">
+                                <div class="car-listings-range-labels">
+                                    <span>$0</span>
+                                    <span id="car-listings-priceValue">$100,000</span>
+                                    <span>$200k+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Make <span class="car-listings-arrow">▲</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> Acura (1)</label>
+                            <label><input type="checkbox"> Audi (58)</label>
+                            <label><input type="checkbox"> Rolls Royce (10)</label>
+                            <label><input type="checkbox"> Range Rover (6)</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Body Type <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> SUV</label>
+                            <label><input type="checkbox"> Sedan</label>
+                            <label><input type="checkbox"> Coupe</label>
+                            <label><input type="checkbox"> Convertible</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Year <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <div class="car-listings-slider-container">
+                                <input type="range" min="2000" max="2024" value="2020" class="car-listings-slider" id="car-listings-yearSlider">
+                                <div class="car-listings-range-labels">
+                                    <span>2000</span>
+                                    <span id="car-listings-yearValue">2020</span>
+                                    <span>2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Features <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> Leather Seats</label>
+                            <label><input type="checkbox"> Sunroof</label>
+                            <label><input type="checkbox"> Navigation</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Payment <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> Cash</label>
+                            <label><input type="checkbox"> Finance</label>
+                            <label><input type="checkbox"> Lease</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Drive Train <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> AWD</label>
+                            <label><input type="checkbox"> FWD</label>
+                            <label><input type="checkbox"> RWD</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Color <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> Black</label>
+                            <label><input type="checkbox"> White</label>
+                            <label><input type="checkbox"> Silver</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Mileage <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <div class="car-listings-slider-container">
+                                <input type="range" min="0" max="100000" value="50000" class="car-listings-slider" id="car-listings-mileageSlider">
+                                <div class="car-listings-range-labels">
+                                    <span>0 mi</span>
+                                    <span id="car-listings-mileageValue">50k mi</span>
+                                    <span>100k+ mi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Fuel Type <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> Gasoline</label>
+                            <label><input type="checkbox"> Electric</label>
+                            <label><input type="checkbox"> Hybrid</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Transmission <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> Automatic</label>
+                            <label><input type="checkbox"> Manual</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Passenger Capacity <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> 2 Seats</label>
+                            <label><input type="checkbox"> 4 Seats</label>
+                            <label><input type="checkbox"> 5 Seats</label>
+                            <label><input type="checkbox"> 7+ Seats</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Fuel Economy <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <div class="car-listings-slider-container">
+                                <input type="range" min="10" max="50" value="25" class="car-listings-slider" id="car-listings-fuelEconomySlider">
+                                <div class="car-listings-range-labels">
+                                    <span>10 MPG</span>
+                                    <span id="car-listings-fuelEconomyValue">25 MPG</span>
+                                    <span>50+ MPG</span>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Engine <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> 4 Cylinder</label>
+                            <label><input type="checkbox"> 6 Cylinder</label>
+                            <label><input type="checkbox"> 8 Cylinder</label>
+                            <label><input type="checkbox"> Electric Motor</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Condition <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> Excellent</label>
+                            <label><input type="checkbox"> Good</label>
+                            <label><input type="checkbox"> Fair</label>
+                            <label><input type="checkbox"> Needs Work</label>
+                        </div>
+                    </details>
+
+                    <details class="car-listings-filter-section">
+                        <summary>Seller Type <span class="car-listings-arrow">▼</span></summary>
+                        <div class="car-listings-filter-content">
+                            <label><input type="checkbox"> Dealer</label>
+                            <label><input type="checkbox"> Private Party</label>
+                            <label><input type="checkbox"> Certified Dealer</label>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Search Tab Content -->
+            <div id="car-listings-search-tab" class="car-listings-sidebar-tab-content">
+                <div class="car-listings-search-container">
+                    <div class="car-listings-logo">
+                        <h2>CarsPortal</h2>
+                    </div>
+                    <div class="car-listings-search-form">
+                        <input type="text" placeholder="Search All Vehicles" class="car-listings-search-input">
+                        <button class="car-listings-search-btn">SEARCH</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="car-listings-main-content">
+            <div class="car-listings-content-header">
+                <button class="car-listings-arrow-btn"><i class="fa-solid fa-angle-left"></i></button>
+                <button class="car-listings-sort-btn">SORT</button>
+            </div>
+
+            <div class="car-listings-car-grid" id="car-listings-carGrid">
+                <!-- Car cards will be generated by JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="car-listings-pagination" id="car-listings-pagination">
+                <button class="car-listings-page-btn" id="car-listings-prevBtn">Previous</button>
+                <div class="car-listings-page-numbers" id="car-listings-pageNumbers">
+                    <!-- Page numbers will be generated by JavaScript -->
+                </div>
+                <button class="car-listings-page-btn" id="car-listings-nextBtn">Next</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- People Also Search For Section -->
+    <section class="people-search-section">
+      <div class="container">
+        <div class="section-layout">
+          <div class="left-content">
+            <h2>People also search for</h2>
+
+            <div class="search-category">
+              <h3>Used Cars</h3>
+              <div class="search-links">
+                <a href="#">Used cars in Dubai (17730)</a>
+                <a href="#">Used cars in Ajman (3124)</a>
+                <a href="#">Used cars in Fujairah (2346)</a>
+                <a href="#">Used cars in Sharjah (5989)</a>
+              </div>
+            </div>
+
+            <div class="search-category">
+              <h3>Used cars by budget</h3>
+              <div class="search-links">
+                <a href="#">Used cars under 30000 AED (11968)</a>
+                <a href="#">Used cars under 50000 AED (20418)</a>
+                <a href="#">Used cars under 70000 AED (24377)</a>
+              </div>
+            </div>
+
+            <div class="search-category">
+              <h3>Used cars by Body Shape</h3>
+              <div class="search-links">
+                <a href="#">Used SUV cars (16384)</a>
+                <a href="#">Used Sedan cars (13281)</a>
+                <a href="#">Used Coupe cars (1669)</a>
+                <a href="#">Used Hatchback cars (2368)</a>
+              </div>
+            </div>
+
+            <div class="search-category">
+              <h3>Popular used cars brands</h3>
+              <div class="search-links">
+                <a href="#">Toyota (4323)</a>
+                <a href="#">Mercedes-Benz (2406)</a>
+                <a href="#">Nissan (5444)</a>
+                <a href="#">Lexus (1778)</a>
+                <a href="#">BMW (1262)</a>
+              </div>
+            </div>
+
+            <div class="search-category">
+              <h3>Used Chinese cars</h3>
+              <div class="search-links">
+                <a href="#">Used Chinese cars in Dubai (578)</a>
+                <a href="#">Used Chinese cars in Ajman (49)</a>
+                <a href="#">Used Chinese cars in Sharjah (71)</a>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <span class="page active">1</span>
+              <a href="#" class="page">2</a>
+              <a href="#" class="page">3</a>
+              <a href="#" class="page">4</a>
+              <a href="#" class="page">5</a>
+              <span class="dots">...</span>
+              <a href="#" class="page">492</a>
+              <a href="#" class="page">Next ></a>
+            </div>
+          </div>
+          <div class="right-content">
+            <!-- Empty space as requested -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Car Brands Section -->
+    <section class="brands-section">
+      <div class="brands-container">
+        <h2>Popular brands in UAE - Prices, Specs & Features</h2>
+
+        <div class="brands-grid" id="brandsGrid">
+          <!-- Brands will be populated by JavaScript -->
+        </div>
+
+        <div class="show-more-container">
+          <button
+            class="show-more-btn"
+            id="showMoreBtn"
+            onclick="toggleShowMore()"
+          >
+            Show More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Used Cars in the UAE Section -->
+    <div class="used-cars-uae-container">
+      <h1 class="used-cars-uae-title">Used Cars in the UAE</h1>
+
+      <div class="used-cars-uae-section">
+        <p class="used-cars-uae-text">
+          UAE is home to one of the region's most comprehensive selections of
+          used cars across the UAE, connecting buyers to certified car dealers.
+          Find used cars for sale in Dubai, Abu Dhabi, Sharjah and more. From
+          sedans to SUVs, YallaMotor provides a seamless way for car enthusiasts
+          to search the cars they are interested in every emirate. The platform
+          also allows car buyers to explore vehicle rental cars for brands and
+          models, ensuring quality and transparency in every car listing.
+        </p>
+      </div>
+
+      <div class="used-cars-uae-section">
+        <h2 class="used-cars-uae-heading">
+          Sell Your Used Car Easily and for Free
+        </h2>
+        <p class="used-cars-uae-text">
+          Sellers can list with YallaMotor for free, giving them enhanced and
+          free of charge. Sellers can easily create car listings, reaching a
+          broad audience of potential buyers. This convenient service empowers
+          users to find the right buyer without added expenses.
+        </p>
+      </div>
+
+      <div class="used-cars-uae-section">
+        <h2 class="used-cars-uae-heading">
+          Comprehensive Services for Peace of Mind
+        </h2>
+        <p class="used-cars-uae-text">
+          In addition to buying and selling, YallaMotor offers value-added
+          services, including car inspections, detailed car history reports, and
+          precise car valuations. These services provide essential insights and
+          assurance for buyers, enabling them to make informed decisions when
+          considering and negotiate based on quality and condition.
+        </p>
+      </div>
+
+      <div class="used-cars-uae-section">
+        <h2 class="used-cars-uae-heading">
+          Simplifying Car Export from the UAE
+        </h2>
+        <p class="used-cars-uae-text">
+          YallaMotor UAE also facilitates
+          <a href="#" class="used-cars-uae-link">car exports from the UAE</a>,
+          offering a hassle-free process for users looking to take their cars
+          internationally. This feature caters to YallaMotor, so users are given
+          more options, with a special edge to the online car market, enabling
+          international buyers who wish to explore UAE's used car market.
+        </p>
+      </div>
+
+      <div class="used-cars-uae-section">
+        <h2 class="used-cars-uae-heading">
+          Wide Variety of Cars for Every Budget
+        </h2>
+        <p class="used-cars-uae-text">
+          YallaMotor's UAE platform caters to consumers of all types within
+          every budget, especially the most varied
+          <a href="#" class="used-cars-uae-link">used cars under 10,000 AED</a>
+          for sale in the UAE from the best car brands like Toyota, Nissan, and
+          Hyundai for daily commuting to luxury sedans and SUVs like Mercedes,
+          BMW, and Audi for a premium experience, and even exotic hypercars for
+          automotive enthusiasts and connoisseurs. From classic old school cars
+          to new cars, Offering a variety of pricing options, you will find
+          these used cars in Dubai and a range variety of multicommodal cars.
+          YallaMotor UAE ensures that every buyer finds a suitable used car
+          within their budget. This variety caters to first-time buyers,
+          families, and car enthusiasts alike, making it easy to find a used car
+          in UAE that meets both personal and financial needs.
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="../../used-tab-down/search-used-cars/js/used-popular.js"></script>
+    <script src="../../used-tab-down/search-used-cars/js/used-search.js"></script>
+    <script src="/js/navbar.js"></script>
+  </body>
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <title>Car Portal Homepage</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div id="navbar"></div>   
+    
+
+    <!-- Filter Tabs Section -->
+    <div class="homepage-filters">
+      <div class="filter-tabs">
+        <button class="tab-btn active" data-tab="category">Category</button>
+        <button class="tab-btn" data-tab="budget">Budget</button>
+        <button class="tab-btn" data-tab="brand">Brand</button>
+        <button class="tab-btn" data-tab="model">Model</button>
+        <button class="tab-btn" data-tab="cities">Cities</button>
+        <button class="tab-btn" data-tab="body-types">Body Types</button>
+        <button class="tab-btn" data-tab="years">Years</button>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel" id="category-carousel">
+          <div class="carousel-track">
+            <div class="filter-item">
+              <div class="icon">
+                <svg width="16" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1c0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52-.39 1.06-.73 1.69-.98l.37-2.65c.04-.24.25-.42.5-.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z" fill="#666"/>
+                </svg>
+              </div>
+              <span>Automatic</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">
+                <svg width="16" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3Z" fill="#666"/>
+                </svg>
+              </div>
+              <span>Urgent</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">
+                <svg width="20" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.09 14.41L6 15.5L1.5 11L2.91 9.59L6 12.67L21.09 2.59L22.5 4L7.09 14.41Z" fill="#666"/>
+                </svg>
+              </div>
+              <span>Imported Cars</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">
+                <svg width="20" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.92 6C18.72 5.42 18.16 5 17.5 5H6.5C5.84 5 5.28 5.42 5.08 6L3 12V20A1 1 0 0 0 4 21H5A1 1 0 0 0 6 20V19H18V20A1 1 0 0 0 19 21H20A1 1 0 0 0 21 20V12L18.92 6Z" fill="#666"/>
+                </svg>
+              </div>
+              <span>Japanese Cars</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">
+                <svg width="20" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 11L6.5 6.5H17.5L19 11M17.5 16A1.5 1.5 0 0 1 16 14.5A1.5 1.5 0 0 1 17.5 13A1.5 1.5 0 0 1 19 14.5A1.5 1.5 0 0 1 17.5 16M6.5 16A1.5 1.5 0 0 1 5 14.5A1.5 1.5 0 0 1 6.5 13A1.5 1.5 0 0 1 8 14.5A1.5 1.5 0 0 1 6.5 16M18.92 6C18.72 5.42 18.16 5 17.5 5H6.5C5.84 5 5.28 5.42 5.08 6L3 12V16A1 1 0 0 0 4 17H5A1 1 0 0 0 6 16V15H18V16A1 1 0 0 0 19 17H20A1 1 0 0 0 21 16V12L18.92 6Z" fill="#666"/>
+                </svg>
+              </div>
+              <span>Jeep</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">
+                <svg width="20" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 19V21H4V19H2V17H4C4 15.89 4.89 15 6 15S8 15.89 8 17H16C16 15.89 16.89 15 18 15S20 15.89 20 17H22V19H20V21H18V19H8V21H6M7 5H17V7H19V13H17V11H7V13H5V7H7V5Z" fill="#666"/>
+                </svg>
+              </div>
+              <span>Suzuki Bolan</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">
+                <svg width="20" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 16L16 12H13V8H11V12H8L12 16M5 11L6.5 6.5H17.5L19 11M17.5 16A1.5 1.5 0 0 1 16 14.5A1.5 1.5 0 0 1 17.5 13A1.5 1.5 0 0 1 19 14.5A1.5 1.5 0 0 1 17.5 16M6.5 16A1.5 1.5 0 0 1 5 14.5A1.5 1.5 0 0 1 6.5 13A1.5 1.5 0 0 1 8 14.5A1.5 1.5 0 0 1 6.5 16M18.92 6C18.72 5.42 18.16 5 17.5 5H6.5C5.84 5 5.28 5.42 5.08 6L3 12V20A1 1 0 0 0 4 21H5A1 1 0 0 0 6 20V19H18V20A1 1 0 0 0 19 21H20A1 1 0 0 0 21 20V12L18.92 6Z" fill="#666"/>
+                </svg>
+              </div>
+              <span>Cheap Cars</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">
+                <svg width="20" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 16L16 12H13V8H11V12H8L12 16M5 11L6.5 6.5H17.5L19 11M17.5 16A1.5 1.5 0 0 1 16 14.5A1.5 1.5 0 0 1 17.5 13A1.5 1.5 0 0 1 19 14.5A1.5 1.5 0 0 1 17.5 16M6.5 16A1.5 1.5 0 0 1 5 14.5A1.5 1.5 0 0 1 6.5 13A1.5 1.5 0 0 1 8 14.5A1.5 1.5 0 0 1 6.5 16M18.92 6C18.72 5.42 18.16 5 17.5 5H6.5C5.84 5 5.28 5.42 5.08 6L3 12V20A1 1 0 0 0 4 21H5A1 1 0 0 0 6 20V19H18V20A1 1 0 0 0 19 21H20A1 1 0 0 0 21 20V12L18.92 6Z" fill="#666"/>
+                </svg>
+              </div>
+              <span>Hybrid Cars</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🔋</div>
+              <span>Electric Cars</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏎️</div>
+              <span>Sports Cars</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚛</div>
+              <span>Commercial</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🔧</div>
+              <span>Manual</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💎</div>
+              <span>Luxury</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🆕</div>
+              <span>New Cars</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">♻️</div>
+              <span>Used Cars</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">⭐</div>
+              <span>Featured</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel" id="budget-carousel" style="display: none">
+          <div class="carousel-track">
+            <div class="filter-item">
+              <div class="icon">💵</div>
+              <span>Under $5K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💵</div>
+              <span>$5K - $10K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💵</div>
+              <span>$10K - $15K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💵</div>
+              <span>$15K - $20K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💵</div>
+              <span>$20K - $25K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💵</div>
+              <span>$25K - $30K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💰</div>
+              <span>$30K - $40K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💰</div>
+              <span>$40K - $50K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💰</div>
+              <span>$50K - $75K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💰</div>
+              <span>$75K - $100K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💎</div>
+              <span>$100K - $150K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💎</div>
+              <span>$150K - $200K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💎</div>
+              <span>$200K - $300K</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💎</div>
+              <span>$300K+</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">💸</div>
+              <span>Negotiable</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel" id="brand-carousel" style="display: none">
+          <div class="carousel-track">
+            <div class="filter-item">
+              <div class="number-badge">1</div>
+              <div class="icon">🚗</div>
+              <span>Toyota</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">2</div>
+              <div class="icon">🚗</div>
+              <span>Nissan</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">5</div>
+              <div class="icon">🚗</div>
+              <span>Kia</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">6</div>
+              <div class="icon">🚗</div>
+              <span>BMW</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">7</div>
+              <div class="icon">🚗</div>
+              <span>Chevrolet</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">8</div>
+              <div class="icon">🚗</div>
+              <span>Audi</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">9</div>
+              <div class="icon">🚗</div>
+              <span>Land Rover</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">10</div>
+              <div class="icon">🚗</div>
+              <span>Bentley</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">11</div>
+              <div class="icon">🚗</div>
+              <span>Mercedes</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">12</div>
+              <div class="icon">🚗</div>
+              <span>Mazda</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">13</div>
+              <div class="icon">🚗</div>
+              <span>Honda</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">14</div>
+              <div class="icon">🚗</div>
+              <span>Hyundai</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">15</div>
+              <div class="icon">🚗</div>
+              <span>Tesla</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">16</div>
+              <div class="icon">🚗</div>
+              <span>Volkswagen</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">17</div>
+              <div class="icon">🚗</div>
+              <span>Suzuki</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel" id="model-carousel" style="display: none">
+          <div class="carousel-track">
+            <div class="filter-item">
+              <div class="icon">🚗</div>
+              <span>Civic</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚗</div>
+              <span>Corolla</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚗</div>
+              <span>Camry</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚗</div>
+              <span>Accord</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚙</div>
+              <span>CR-V</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚙</div>
+              <span>RAV4</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚙</div>
+              <span>Highlander</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚗</div>
+              <span>Altima</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚗</div>
+              <span>Sentra</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚙</div>
+              <span>Rogue</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚗</div>
+              <span>Elantra</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚙</div>
+              <span>Santa Fe</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚗</div>
+              <span>Forte</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🚙</div>
+              <span>Sorento</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏎️</div>
+              <span>Mustang</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel" id="cities-carousel" style="display: none">
+          <div class="carousel-track">
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>New York</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>Los Angeles</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>Chicago</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>Houston</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>Phoenix</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>Philadelphia</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>San Antonio</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>San Diego</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>Dallas</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>San Jose</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>Austin</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>Jacksonville</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>Fort Worth</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>Columbus</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">🏙️</div>
+              <span>Charlotte</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel" id="body-types-carousel" style="display: none">
+          <div class="carousel-track">
+            <div class="filter-item">
+              <div class="number-badge">5</div>
+              <div class="icon">🚗</div>
+              <span>Convertibles</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">10</div>
+              <div class="icon">🚗</div>
+              <span>Coupe</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">12</div>
+              <div class="icon">🚗</div>
+              <span>Hatchback</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">12</div>
+              <div class="icon">🚗</div>
+              <span>Sedan</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">3</div>
+              <div class="icon">🚙</div>
+              <span>SUV</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">3</div>
+              <div class="icon">🚐</div>
+              <span>Van</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">3</div>
+              <div class="icon">🚛</div>
+              <span>Truck</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">3</div>
+              <div class="icon">🚛</div>
+              <span>Pick Up</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">4</div>
+              <div class="icon">🚗</div>
+              <span>Crossover</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">5</div>
+              <div class="icon">🚐</div>
+              <span>Minivan</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">6</div>
+              <div class="icon">🏎️</div>
+              <span>Sports Car</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">7</div>
+              <div class="icon">🚗</div>
+              <span>Wagon</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">8</div>
+              <div class="icon">🔋</div>
+              <span>Electric</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">9</div>
+              <div class="icon">⚡</div>
+              <span>Hybrid</span>
+            </div>
+            <div class="filter-item">
+              <div class="number-badge">10</div>
+              <div class="icon">💎</div>
+              <span>Luxury</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel" id="years-carousel" style="display: none">
+          <div class="carousel-track">
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2024</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2023</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2022</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2021</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2020</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2019</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2018</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2017</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2016</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2015</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2014</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2013</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2012</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2011</span>
+            </div>
+            <div class="filter-item">
+              <div class="icon">📅</div>
+              <span>2010 & Older</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car Listings Section -->
+    <div class="main-container">
+      <!-- Left Sidebar -->
+      <aside class="left-sidebar">
+        <div class="sidebar-header">
+          <h2>10,730 VEHICLES FOUND</h2>
+          <div class="sidebar-tabs">
+            <button class="sidebar-tab-btn active" data-tab="filters">FILTERS</button>
+            <button class="sidebar-tab-btn" data-tab="search">SEARCH</button>
+          </div>
+        </div>
+
+        <!-- Filters Tab Content -->
+        <div id="filters-tab" class="sidebar-tab-content active">
+          <div class="filters-container">
+            <details class="filter-section">
+              <summary>Distance <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <div class="slider-container">
+                  <input type="range" min="0" max="100" value="50" class="slider" id="distanceSlider">
+                  <div class="range-labels">
+                    <span>0 mi</span>
+                    <span id="distanceValue">50 mi</span>
+                    <span>100+ mi</span>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Vehicle Status <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> New</label>
+                <label><input type="checkbox"> Used</label>
+                <label><input type="checkbox"> Certified Pre-Owned</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Price <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <div class="price-inputs">
+                  <input type="text" placeholder="Min" class="price-input" id="minPrice">
+                  <input type="text" placeholder="Max" class="price-input" id="maxPrice">
+                </div>
+                <div class="slider-container">
+                  <input type="range" min="0" max="200000" value="100000" class="slider" id="priceSlider">
+                  <div class="range-labels">
+                    <span>$0</span>
+                    <span id="priceValue">$100,000</span>
+                    <span>$200k+</span>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Make <span class="arrow">▲</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> Acura (1)</label>
+                <label><input type="checkbox"> Audi (58)</label>
+                <label><input type="checkbox"> Rolls Royce (10)</label>
+                <label><input type="checkbox"> Range Rover (6)</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Body Type <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> SUV</label>
+                <label><input type="checkbox"> Sedan</label>
+                <label><input type="checkbox"> Coupe</label>
+                <label><input type="checkbox"> Convertible</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Year <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <div class="slider-container">
+                  <input type="range" min="2000" max="2024" value="2020" class="slider" id="yearSlider">
+                  <div class="range-labels">
+                    <span>2000</span>
+                    <span id="yearValue">2020</span>
+                    <span>2024</span>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Features <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> Leather Seats</label>
+                <label><input type="checkbox"> Sunroof</label>
+                <label><input type="checkbox"> Navigation</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Payment <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> Cash</label>
+                <label><input type="checkbox"> Finance</label>
+                <label><input type="checkbox"> Lease</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Drive Train <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> AWD</label>
+                <label><input type="checkbox"> FWD</label>
+                <label><input type="checkbox"> RWD</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Color <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> Black</label>
+                <label><input type="checkbox"> White</label>
+                <label><input type="checkbox"> Silver</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Mileage <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <div class="slider-container">
+                  <input type="range" min="0" max="100000" value="50000" class="slider" id="mileageSlider">
+                  <div class="range-labels">
+                    <span>0 mi</span>
+                    <span id="mileageValue">50k mi</span>
+                    <span>100k+ mi</span>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Fuel Type <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> Gasoline</label>
+                <label><input type="checkbox"> Electric</label>
+                <label><input type="checkbox"> Hybrid</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Transmission <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> Automatic</label>
+                <label><input type="checkbox"> Manual</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Passenger Capacity <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> 2 Seats</label>
+                <label><input type="checkbox"> 4 Seats</label>
+                <label><input type="checkbox"> 5 Seats</label>
+                <label><input type="checkbox"> 7+ Seats</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Fuel Economy <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <div class="slider-container">
+                  <input type="range" min="10" max="50" value="25" class="slider" id="fuelEconomySlider">
+                  <div class="range-labels">
+                    <span>10 MPG</span>
+                    <span id="fuelEconomyValue">25 MPG</span>
+                    <span>50+ MPG</span>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Engine <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> 4 Cylinder</label>
+                <label><input type="checkbox"> 6 Cylinder</label>
+                <label><input type="checkbox"> 8 Cylinder</label>
+                <label><input type="checkbox"> Electric Motor</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Condition <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> Excellent</label>
+                <label><input type="checkbox"> Good</label>
+                <label><input type="checkbox"> Fair</label>
+                <label><input type="checkbox"> Needs Work</label>
+              </div>
+            </details>
+
+            <details class="filter-section">
+              <summary>Seller Type <span class="arrow">▼</span></summary>
+              <div class="filter-content">
+                <label><input type="checkbox"> Dealer</label>
+                <label><input type="checkbox"> Private Party</label>
+                <label><input type="checkbox"> Certified Dealer</label>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Search Tab Content -->
+        <div id="search-tab" class="sidebar-tab-content">
+          <div class="search-container">
+            <div class="tab-logo">
+              <img src="images/logos/cars-portal-logo.png" alt="CarsPortal Logo">
+            </div>
+            <div class="search-form">
+              <input type="text" placeholder="Search All Vehicles" class="search-input">
+              <button class="search-btn">SEARCH</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="content-header">
+          <button class="arrow-btn"><i class="fa-solid fa-angle-left"></i></button>
+          <button class="sort-btn">SORT</button>
+        </div>
+
+        <div class="car-grid" id="carGrid">
+          <!-- Car cards will be generated by JavaScript -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination">
+          <button class="page-btn" id="prevBtn">Previous</button>
+          <div class="page-numbers" id="pageNumbers">
+            <!-- Page numbers will be generated by JavaScript -->
+          </div>
+          <button class="page-btn" id="nextBtn">Next</button>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer Section -->
+     <div id="footer"></div>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/navbar.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="../browsecarsbybrand/stylecss/chevrolet.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
+  </head>
+  <body>
+    <!-- Navigation placeholder -->
+    <div id="navbar"></div>
+
+    <!-- Search Bar Section -->
+    <section class="search-section">
+      <div class="container">
+        <!-- Main Search Row -->
+        <div class="search-row">
+          <div class="search-field">
+            <div class="dropdown-wrapper">
+              <button class="dropdown" id="priceRangeBtn">
+                Price Range
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <!-- Price Range Popup -->
+              <div class="popup-overlay" id="priceRangePopup">
+                <div class="popup-content">
+                  <div class="popup-header">
+                    <h3>Price Range (AED)</h3>
+                    <button class="close-btn">&times;</button>
+                  </div>
+                  <div class="popup-body">
+                    <div class="price-inputs">
+                      <div class="input-group">
+                        <label>Minimum:</label>
+                        <input
+                          type="number"
+                          placeholder="0"
+                          class="price-input"
+                        />
+                      </div>
+                      <span class="separator">-</span>
+                      <div class="input-group">
+                        <label>Maximum:</label>
+                        <input
+                          type="number"
+                          placeholder="To"
+                          class="price-input"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup-footer">
+                    <button class="reset-btn">Reset</button>
+                    <button class="done-btn">Done</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="search-field flex-1">
+            <div class="search-input-wrapper">
+              <button class="search-input" id="carMakeBtn">
+                <i class="fas fa-search"></i>
+                Select car make/brand
+              </button>
+              <!-- Car Make/Brand Popup -->
+              <div class="popup-overlay" id="carMakePopup">
+                <div class="popup-content large">
+                  <div class="popup-header">
+                    <h3>Select car make/brand</h3>
+                    <button class="close-btn">&times;</button>
+                  </div>
+                  <div class="popup-body">
+                    <div class="search-box">
+                      <input
+                        type="text"
+                        placeholder="Search by typing"
+                        class="brand-search"
+                      />
+                      <i class="fas fa-search"></i>
+                    </div>
+                    <div class="brand-list">
+                      <div class="brand-item">Hyundai</div>
+                      <div class="brand-item">Toyota</div>
+                      <div class="brand-item">Honda</div>
+                      <div class="brand-item">Nissan</div>
+                      <div class="brand-item">BMW</div>
+                      <div class="brand-item">Mercedes-Benz</div>
+                      <div class="brand-item">Audi</div>
+                      <div class="brand-item">KIA</div>
+                      <div class="brand-item">Volkswagen</div>
+                      <div class="brand-item">Ford</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="search-btn">Search</button>
+        </div>
+
+        <!-- Filter Row -->
+        <div class="filter-row">
+          <button class="filter-dropdown" id="seatsBtn">
+            Seats <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="filter-dropdown" id="bodyTypesBtn">
+            Body Types <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="filter-dropdown" id="transmissionBtn">
+            Transmission <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="filter-dropdown" id="cylindersBtn">
+            Cylinders <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="more-filters" id="moreFiltersBtn">
+            <i class="fas fa-sliders-h"></i> More Filters
+          </button>
+          <button class="clear-all">Clear All</button>
+        </div>
+
+        <!-- All the popup modals (same as original) -->
+        <!-- Seats Popup -->
+        <div class="popup-overlay" id="seatsPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Seats</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="seats-grid">
+                <div class="seat-option">2</div>
+                <div class="seat-option">4</div>
+                <div class="seat-option">5</div>
+                <div class="seat-option">7+</div>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Body Types Popup -->
+        <div class="popup-overlay" id="bodyTypesPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Body Type</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="body-types-grid">
+                <div class="body-type-option">
+                  <i class="fas fa-car"></i>
+                  <span>Sedan</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-truck"></i>
+                  <span>SUV</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car-side"></i>
+                  <span>Hatchback</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car-alt"></i>
+                  <span>Coupe</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-shuttle-van"></i>
+                  <span>Convertible</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-truck-pickup"></i>
+                  <span>Pickup</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-bus"></i>
+                  <span>Van</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car"></i>
+                  <span>Wagon</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-motorcycle"></i>
+                  <span>Crossover</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-car-crash"></i>
+                  <span>Sports</span>
+                </div>
+                <div class="body-type-option">
+                  <i class="fas fa-truck-monster"></i>
+                  <span>Truck</span>
+                </div>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transmission Popup -->
+        <div class="popup-overlay" id="transmissionPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Transmission</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="transmission-options">
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="transmission"
+                    value="automatic"
+                  />
+                  <span class="checkmark"></span>
+                  Automatic
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="transmission" value="manual" />
+                  <span class="checkmark"></span>
+                  Manual
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="transmission" value="cvt" />
+                  <span class="checkmark"></span>
+                  CVT
+                </label>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cylinders Popup -->
+        <div class="popup-overlay" id="cylindersPopup">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3>Cylinders</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="cylinders-grid">
+                <div class="cylinder-option">3</div>
+                <div class="cylinder-option">4</div>
+                <div class="cylinder-option">5</div>
+                <div class="cylinder-option">6</div>
+                <div class="cylinder-option">8</div>
+                <div class="cylinder-option">10</div>
+                <div class="cylinder-option">12</div>
+                <div class="cylinder-option">16</div>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- More Filters Popup -->
+        <div class="popup-overlay" id="moreFiltersPopup">
+          <div class="popup-content large">
+            <div class="popup-header">
+              <h3>More Filters</h3>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+              <div class="filter-section">
+                <label>Horsepower (bhp)</label>
+                <select class="filter-select">
+                  <option>Any</option>
+                  <option>Under 100</option>
+                  <option>100-200</option>
+                  <option>200-300</option>
+                  <option>300+</option>
+                </select>
+              </div>
+
+              <div class="filter-section">
+                <label>Fuel Type</label>
+                <div class="checkbox-grid">
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="petrol" />
+                    <span class="checkmark"></span>
+                    Petrol
+                  </label>
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="diesel" />
+                    <span class="checkmark"></span>
+                    Diesel
+                  </label>
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="electric" />
+                    <span class="checkmark"></span>
+                    Electric
+                  </label>
+                  <label class="checkbox-option">
+                    <input type="checkbox" name="fuel" value="hybrid" />
+                    <span class="checkmark"></span>
+                    Hybrid
+                  </label>
+                </div>
+              </div>
+
+              <div class="filter-section">
+                <label>Brand Origin</label>
+                <select class="filter-select">
+                  <option>Any</option>
+                  <option>German</option>
+                  <option>Japanese</option>
+                  <option>American</option>
+                  <option>Korean</option>
+                  <option>Chinese</option>
+                </select>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <button class="reset-btn">Reset</button>
+              <button class="done-btn">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Used Hyundai Cars Section -->
+    <section class="guide-section">
+      <div class="container">
+        <div class="section-layout">
+          <div class="left-content">
+            <div class="section-header">
+              <h2>Used Chevrolet cars for sale in UAE</h2>
+              <p>
+                1,114 used cars for sale found. Check Certified Pre-owned, New,
+                and Used cars on YallaMotor.
+              </p>
+              <div class="results-info">
+                <span>Showing 1 - 8 of 1,274 Used Hyundai Cars</span>
+                <div class="sort-by">
+                  <span>Sort:</span>
+                  <select class="sort-dropdown">
+                    <option>Price Low > High</option>
+                    <option>Price High > Low</option>
+                    <option>Year New > Old</option>
+                    <option>Year Old > New</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Car Cards -->
+            <div class="car-cards">
+              <!-- Car Card 1 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg"
+                    alt="Hyundai Santa Fe"
+                  />
+                  <div class="price-badge">AED 89,000</div>
+                  <div class="featured-badge">FEATURED</div>
+                  <div class="good-deal-badge">Good Deal</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Used Hyundai Santa Fe 2.5L GLS Smart (AWD) 2024</h3>
+                    <p>
+                      Top of the line trim with all features. Car has been in a
+                      possession of one owner only. There are no issues with
+                      this car whatsoever. US spec.
+                    </p>
+                    <div class="car-location-info">
+                      <span class="location"
+                        ><i class="fas fa-map-marker-alt"></i> Dubai</span
+                      >
+                      <span class="mileage"
+                        ><i class="fas fa-road"></i> 23,087</span
+                      >
+                      <span class="year"
+                        ><i class="fas fa-calendar"></i> 2024</span
+                      >
+                    </div>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 7 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-gas-pump"></i> Petrol</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-flag-usa"></i> American Specs</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-show-number">Show Number</button>
+                    <button class="btn-whatsapp">
+                      <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare1" />
+                      <label for="compare1">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 2 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg"
+                    alt="Hyundai Azera"
+                  />
+                  <div class="price-badge">AED 124,999</div>
+                  <div class="featured-badge">FEATURED</div>
+                  <div class="good-deal-badge">Good Deal</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>New Hyundai Azera 2.4L 2024</h3>
+                    <p>
+                      Hyundai Azera Model 2024 Diplomat 2.4 KM Brand New
+                      Warranty Under Agency Warranty 4 Years Specification: GCC
+                      Cylinders: V4.
+                    </p>
+                    <div class="car-location-info">
+                      <span class="location"
+                        ><i class="fas fa-map-marker-alt"></i> Sharjah</span
+                      >
+                      <span class="mileage"><i class="fas fa-road"></i> 0</span>
+                      <span class="year"
+                        ><i class="fas fa-calendar"></i> 2024</span
+                      >
+                    </div>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-gas-pump"></i> Petrol</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-flag"></i> GCC Specs</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-show-number">Show Number</button>
+                    <button class="btn-whatsapp">
+                      <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare2" />
+                      <label for="compare2">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 3 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg"
+                    alt="Hyundai Veracruz"
+                  />
+                  <div class="price-badge">AED 20,000</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Used Hyundai Veracruz 3.8L 2009</h3>
+                    <p>
+                      Second hand car with 200 k at affordable. Look no further
+                      because we have the perfect car.
+                    </p>
+                    <div class="car-location-info">
+                      <span class="location"
+                        ><i class="fas fa-map-marker-alt"></i> Ajman</span
+                      >
+                      <span class="mileage"
+                        ><i class="fas fa-road"></i> 200,000</span
+                      >
+                      <span class="year"
+                        ><i class="fas fa-calendar"></i> 2009</span
+                      >
+                    </div>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 7 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-gas-pump"></i> Petrol</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-flag"></i> GCC Specs</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-show-number">Show Number</button>
+                    <button class="btn-whatsapp">
+                      <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare3" />
+                      <label for="compare3">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 4 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="https://images.pexels.com/photos/193999/pexels-photo-193999.jpeg"
+                    alt="Hyundai Sonata"
+                  />
+                  <div class="price-badge">AED 43,000</div>
+                  <div class="good-deal-badge">Good Deal</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Used Hyundai Veracruz 3.8L 2009</h3>
+                    <p>
+                      Looking for a reliable and stylish SUV that can handle
+                      whatever life throws your way? Look no further, because we
+                      have the perfect car for you the...
+                    </p>
+                    <div class="car-location-info">
+                      <span class="location"
+                        ><i class="fas fa-map-marker-alt"></i> Al Ain</span
+                      >
+                      <span class="mileage"
+                        ><i class="fas fa-road"></i> 200,000</span
+                      >
+                      <span class="year"
+                        ><i class="fas fa-calendar"></i> 2009</span
+                      >
+                    </div>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-gas-pump"></i> Petrol</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-flag"></i> American Specs</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-show-number">Show Number</button>
+                    <button class="btn-whatsapp">
+                      <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare4" />
+                      <label for="compare4">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 5 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg"
+                    alt="Hyundai Tucson"
+                  />
+                  <div class="price-badge">AED 65,000</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Used Hyundai Tucson 2.0L 2018</h3>
+                    <p>
+                      Well maintained Hyundai Tucson in excellent condition.
+                      Perfect family SUV with great reliability and comfort
+                      features.
+                    </p>
+                    <div class="car-location-info">
+                      <span class="location"
+                        ><i class="fas fa-map-marker-alt"></i> Dubai</span
+                      >
+                      <span class="mileage"
+                        ><i class="fas fa-road"></i> 85,000</span
+                      >
+                      <span class="year"
+                        ><i class="fas fa-calendar"></i> 2018</span
+                      >
+                    </div>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-gas-pump"></i> Petrol</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-flag"></i> GCC Specs</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-show-number">Show Number</button>
+                    <button class="btn-whatsapp">
+                      <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare5" />
+                      <label for="compare5">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 6 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="https://images.pexels.com/photos/1592097/pexels-photo-1592097.jpeg"
+                    alt="Hyundai Elantra"
+                  />
+                  <div class="price-badge">AED 45,000</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Used Hyundai Elantra 1.6L 2019</h3>
+                    <p>
+                      Excellent condition Hyundai Elantra with low mileage.
+                      Perfect sedan for daily commuting in UAE.
+                    </p>
+                    <div class="car-location-info">
+                      <span class="location"
+                        ><i class="fas fa-map-marker-alt"></i> Abu Dhabi</span
+                      >
+                      <span class="mileage"
+                        ><i class="fas fa-road"></i> 62,000</span
+                      >
+                      <span class="year"
+                        ><i class="fas fa-calendar"></i> 2019</span
+                      >
+                    </div>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-gas-pump"></i> Petrol</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-flag"></i> GCC Specs</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-show-number">Show Number</button>
+                    <button class="btn-whatsapp">
+                      <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare6" />
+                      <label for="compare6">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 7 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="https://images.pexels.com/photos/1125451/pexels-photo-1125451.jpeg"
+                    alt="Hyundai Creta"
+                  />
+                  <div class="price-badge">AED 72,000</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Used Hyundai Creta 1.6L 2022</h3>
+                    <p>
+                      Modern compact SUV with advanced features and excellent
+                      fuel efficiency. Perfect for UAE roads.
+                    </p>
+                    <div class="car-location-info">
+                      <span class="location"
+                        ><i class="fas fa-map-marker-alt"></i> Sharjah</span
+                      >
+                      <span class="mileage"
+                        ><i class="fas fa-road"></i> 35,000</span
+                      >
+                      <span class="year"
+                        ><i class="fas fa-calendar"></i> 2022</span
+                      >
+                    </div>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-gas-pump"></i> Petrol</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-flag"></i> GCC Specs</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-show-number">Show Number</button>
+                    <button class="btn-whatsapp">
+                      <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare7" />
+                      <label for="compare7">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Car Card 8 -->
+              <div class="car-card">
+                <div class="car-image">
+                  <img
+                    src="https://images.pexels.com/photos/2526128/pexels-photo-2526128.jpeg"
+                    alt="Hyundai i30"
+                  />
+                  <div class="price-badge">AED 38,000</div>
+                </div>
+                <div class="car-content">
+                  <div class="car-info">
+                    <h3>Used Hyundai i30 1.4L 2020</h3>
+                    <p>
+                      Reliable hatchback with great fuel economy and modern
+                      features. Perfect for city driving.
+                    </p>
+                    <div class="car-location-info">
+                      <span class="location"
+                        ><i class="fas fa-map-marker-alt"></i> Dubai</span
+                      >
+                      <span class="mileage"
+                        ><i class="fas fa-road"></i> 48,000</span
+                      >
+                      <span class="year"
+                        ><i class="fas fa-calendar"></i> 2020</span
+                      >
+                    </div>
+                    <div class="car-specs">
+                      <span class="spec"
+                        ><i class="fas fa-users"></i> 5 Seater</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-cog"></i> Automatic</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-gas-pump"></i> Petrol</span
+                      >
+                      <span class="spec"
+                        ><i class="fas fa-flag"></i> GCC Specs</span
+                      >
+                    </div>
+                  </div>
+                  <div class="car-actions">
+                    <button class="btn-show-number">Show Number</button>
+                    <button class="btn-whatsapp">
+                      <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <div class="compare-checkbox">
+                      <input type="checkbox" id="compare8" />
+                      <label for="compare8">Compare</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <span class="page active">1</span>
+              <a href="#" class="page">2</a>
+              <a href="#" class="page">3</a>
+              <a href="#" class="page">4</a>
+              <a href="#" class="page">5</a>
+              <span class="dots">...</span>
+              <a href="#" class="page">159</a>
+              <a href="#" class="page">Next ></a>
+            </div>
+          </div>
+          <div class="right-content">
+            <!-- Empty space -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- People Also Search For Section -->
+    <section class="people-search-section">
+      <div class="container">
+        <div class="section-layout">
+          <div class="left-content">
+            <h2>People also search for</h2>
+
+            <div class="search-category">
+              <h3>Used Chevrolet cars for sale By location</h3>
+              <div class="search-links">
+                <a href="#">Used Chevrolet cars for sale in Dubai (581)</a>
+                <a href="#">Used Chevrolet cars for sale in Ajman (119)</a>
+                <a href="#">Used Chevrolet cars for sale in Fujairah (12)</a>
+                <a href="#">Used Chevrolet cars for sale in Sharjah (187)</a>
+                <a href="#"
+                  >Used Chevrolet cars for sale in Ras Al Khaimah (25)</a
+                >
+                <a href="#">Used Chevrolet cars for sale in Abu Dhabi (188)</a>
+                <a href="#">Used Chevrolet cars for sale in Al Ain (29)</a>
+                <a href="#"
+                  >Used Chevrolet cars for sale in Umm al Quwain (13)</a
+                >
+              </div>
+            </div>
+
+            <div class="search-category">
+              <h3>Used Chevrolet cars for sale By Budget</h3>
+              <div class="search-links">
+                <a href="#"
+                  >Used Chevrolet cars for sale under 30000 AED (612)</a
+                >
+                <a href="#"
+                  >Used Chevrolet cars for sale under 50000 AED (834)</a
+                >
+                <a href="#"
+                  >Used Chevrolet cars for sale under 70000 AED (995)</a
+                >
+                <a href="#"
+                  >Used Chevrolet cars for sale under 100000 AED (1060)</a
+                >
+                <a href="#"
+                  >Used Chevrolet cars for sale under 120000 AED (1078)</a
+                >
+                <a href="#"
+                  >Used Chevrolet cars for sale under 150000 AED (1098)</a
+                >
+                <a href="#"
+                  >Used Chevrolet cars for sale under 250000 AED (1143)</a
+                >
+              </div>
+            </div>
+
+            <div class="search-category">
+              <h3>Used Chevrolet cars for sale By model</h3>
+              <div class="search-links">
+                <a href="#">Avalanche (7)</a>
+                <a href="#">Aveo (32)</a>
+                <a href="#">Blazer (15)</a>
+                <a href="#">Bolt EV (1)</a>
+                <a href="#">Camaro Convertible (12)</a>
+                <a href="#">Camaro Coupe (99)</a>
+                <a href="#">Caprice (11)</a>
+                <a href="#">Captiva (149)</a>
+                <a href="#">Colorado (2)</a>
+                <a href="#">Corvette (18)</a>
+                <a href="#">Cruze (137)</a>
+                <a href="#">Equinox (23)</a>
+                <a href="#">Groove (58)</a>
+                <a href="#">Impala (50)</a>
+                <a href="#">Malibu (138)</a>
+                <a href="#">Silverado (69)</a>
+                <a href="#">Sonic (11)</a>
+                <a href="#">Spark (39)</a>
+                <a href="#">Suburban (18)</a>
+                <a href="#">Tahoe (91)</a>
+                <a href="#">Tahoe Midnight Edition (1)</a>
+                <a href="#">Trailblazer (36)</a>
+                <a href="#">Traverse (69)</a>
+                <a href="#">Trax (43)</a>
+              </div>
+            </div>
+
+            <div class="search-category">
+              <h3>Other Searches</h3>
+              <div class="search-links">
+                <a href="#">Used American Cars (5412)</a>
+                <a href="#">Used Chinese cars in Dubai (393)</a>
+                <a href="#">Used cars in Dubai (18671)</a>
+                <a href="#"
+                  >Certified Chevrolet Pre-owned for sale in UAE (51)</a
+                >
+                <a href="#">Used cars in UAE (34916)</a>
+                <a href="#">Used Chinese cars in UAE (970)</a>
+                <a href="#">Used Electric cars in UAE (275)</a>
+                <a href="#">Used cars sold by car dealers in UAE (5949)</a>
+                <a href="#">Certified car dealers in UAE</a>
+              </div>
+            </div>
+          </div>
+          <div class="right-content">
+            <!-- Empty space -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Hyundai Models Section -->
+    <section class="popular-models-section">
+      <div class="container">
+        <h2>Popular Hyundai Models</h2>
+        <div class="models-grid">
+          <div class="hyundai-logo">
+            <img
+              src="../../../images/cars/hyundai-logo-white.jpg"
+              alt="Hyundai Logo"
+            />
+            <span>Hyundai</span>
+          </div>
+          <div class="model-links">
+            <a href="#" class="model-link">Sonata</a>
+            <a href="#" class="model-link">Elantra</a>
+            <a href="#" class="model-link">Tucson</a>
+            <a href="#" class="model-link">Accent</a>
+            <a href="#" class="model-link">Santa Fe</a>
+            <a href="#" class="model-link">Veloster</a>
+            <a href="#" class="model-link">Creta</a>
+            <a href="#" class="model-link">H1</a>
+            <a href="#" class="model-link">Kona</a>
+            <a href="#" class="model-link">Palisade</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Used Hyundai Cars in Dubai Section -->
+    <section class="used-cars-dubai-section">
+      <div class="container">
+        <h2>Used Chevrolet Cars in Dubai</h2>
+        <div class="dubai-content">
+          <p>
+            American auto brands have had an iron grip on the car market in the
+            Middle East - places like Dubai often being the epicenter of
+            activity for many of these well-established automakers. Being one of
+            the world's oldest automobile manufacturer, Chevrolet Is an
+            important part of the General Motors Company. Chevrolet has been
+            selling its vehicles in the United Arab Emirates for many decades
+            now and is widely considered as one of the nation's most respected
+            and liked automobile brands, having a vast and ever-growing
+            audience. Regardless of your budget, this American automotive
+            goliath has a vehicle to suit most of your requirements and
+            specifications.
+          </p>
+          <p>
+            Thanks to its impressive reach and hard-earned but respectable
+            reputation, new Chevrolet cars in Dubai manage to rack up sales
+            relatively admirably. However, the automaker also has dealerships
+            placed in other major cities across the UAE like Sharjah and Abu
+            Dhabi, too. While there will be customers looking to purchase new
+            cars from the showroom, the market for used Chevrolet cars in Dubai
+            has been seeing a steady upward trend for quite a while now. This
+            means that those of you who have been wanting a Chevrolet vehicle
+            but were not in the mood for a brand-new one, have loads of
+            second-hand options to choose from - that too, from all over the
+            UAE.
+          </p>
+          <h3>Chevrolet Models in Dubai</h3>
+          <p>
+            In Dubai, Chevrolet currently boasts of around 18 models that
+            encompass pretty much every major segment in the market.
+            Furthermore, each of these models have multiple variants and
+            versions, thus allowing customers to pick whatever is best suited to
+            their needs. The most pocket-friendly in the range is the Chevrolet
+            Groove that starts from AED 59,700, while the most expensive is the
+            all-new 2020 Chevrolet Corvette. In between these polar opposites,
+            there are coupes, convertibles, sedans, crossovers, full-size SUVs,
+            and pickup trucks.
+          </p>
+          <p>
+            Among other noteworthy models in the marque's UAE line-up, there's
+            the Chevrolet Aveo which can be had in both hatchback and sedan
+            forms. Then there are sedans like the Chevrolet Onix, Chevrolet
+            Malibu, and Chevrolet Impala. Meanwhile, vehicles like the Chevrolet
+            Trax, Chevrolet Blazer, Chevrolet Trailblazer, Chevrolet Captiva,
+            Chevrolet Equinox, and Chevrolet Traverse form the legacy brand's
+            crossover range. The Chevrolet Tahoe and its larger Chevrolet
+            Suburban sibling are great for those on the lookout for large,
+            relatively rugged yet comfortable SUVs.
+          </p>
+          <p>
+            Then there's the Chevrolet Silverado range of pickup trucks for
+            personal and commercial duties, while models like the Chevrolet
+            Camaro Coupe and Chevrolet Camaro Convertible keep muscle car fans
+            and the Camaro nameplate lovers happy. Finally, we have the
+            Chevrolet Bolt EV for those who are really conscious about their
+            carbon footprint, and the spectacular & new Chevrolet Corvette for
+            those who can't get enough of the dinosaur juice.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer placeholder -->
+    <div id="footer"></div>
+
+    <script src="../browsecarsbybrand/js/chevrolet.js"></script>
+    <script src="/js/navbar.js"></script>
+  </body>
+</html>

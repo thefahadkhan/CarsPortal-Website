@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="/styles/parts.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
+    <title>Car Portal Parts</title>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <div id="navbar"></div>
+
+    <!-- Hero Banner Section -->
+  <section class="hero-banner">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Find Your Perfect Spare Part</h1>
+        <p>Trusted by 500,000+ buyers. Verified dealers and individual sellers.</p>
+        <button class="hero-btn" onclick="scrollToSearch()">
+          Start Your AI Car Search
+        </button>
+      </div>
+    </div>
+  </section>
+
+    <div class="pw-container">
+      <!-- Header -->
+      <header class="pw-header">
+        <h1 class="pw-main-title">
+          Car Spare Parts and Accessories in Pakistan
+        </h1>
+        <div class="pw-header-controls">
+          <div class="pw-breadcrumb">
+            <a href="#" class="pw-breadcrumb-link">Home</a>
+            <span class="pw-breadcrumb-separator"> / </span>
+            <a href="#" class="pw-breadcrumb-link">Parts & Accessories</a>
+            <span class="pw-breadcrumb-separator"> / </span>
+            <span class="pw-breadcrumb-current"
+              >Car Spare Parts and Accessories in Pakistan</span
+            >
+          </div>
+          <div class="pw-results-count">1 - 24 of 37008 Results</div>
+        </div>
+      </header>
+
+      <div class="pw-main-layout">
+        <!-- Sidebar -->
+        <aside class="pw-sidebar">
+          <div class="pw-sidebar-header">
+            <h3 class="pw-sidebar-title">SHOW RESULTS BY</h3>
+          </div>
+
+          <!-- Search by Keyword -->
+          <div class="pw-filter-section">
+            <div
+              class="pw-filter-header"
+              onclick="toggleFilter('search-keyword')"
+            >
+              <span class="pw-filter-title">SEARCH BY KEYWORD</span>
+              <span class="pw-filter-arrow" id="arrow-search-keyword">▶</span>
+            </div>
+            <div class="pw-filter-content" id="content-search-keyword">
+              <div class="pw-search-box">
+                <input
+                  type="text"
+                  placeholder="e.g. lights, tyres, etc."
+                  class="pw-search-input"
+                />
+                <button class="pw-search-btn">Go</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sale -->
+          <div class="pw-filter-section">
+            <div class="pw-filter-header" onclick="toggleFilter('sale')">
+              <span class="pw-filter-title">SALE</span>
+              <span class="pw-filter-arrow" id="arrow-sale">▼</span>
+            </div>
+            <div class="pw-filter-content pw-filter-open" id="content-sale">
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Discounted Products</span>
+                </div>
+                <span class="pw-checkbox-count">12,816</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Shop Now -->
+          <div class="pw-filter-section">
+            <div class="pw-filter-header" onclick="toggleFilter('shop-now')">
+              <span class="pw-filter-title">SHOP NOW</span>
+              <span class="pw-filter-arrow" id="arrow-shop-now">▼</span>
+            </div>
+            <div class="pw-filter-content pw-filter-open" id="content-shop-now">
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">CarsPortal Autostores</span>
+                </div>
+                <span class="pw-checkbox-count">25,532</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Free Shipping -->
+          <div class="pw-filter-section">
+            <div
+              class="pw-filter-header"
+              onclick="toggleFilter('free-shipping')"
+            >
+              <span class="pw-filter-title">FREE SHIPPING</span>
+              <span class="pw-filter-arrow" id="arrow-free-shipping">▼</span>
+            </div>
+            <div
+              class="pw-filter-content pw-filter-open"
+              id="content-free-shipping"
+            >
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Free Shipping</span>
+                </div>
+                <span class="pw-checkbox-count">1,946</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Category -->
+          <div class="pw-filter-section">
+            <div class="pw-filter-header" onclick="toggleFilter('category')">
+              <span class="pw-filter-title">CATEGORY</span>
+              <span class="pw-filter-arrow" id="arrow-category">▼</span>
+            </div>
+            <div class="pw-filter-content pw-filter-open" id="content-category">
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Car Care</span>
+                </div>
+                <span class="pw-checkbox-count">8,263</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Interior</span>
+                </div>
+                <span class="pw-checkbox-count">6,547</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Brakes</span>
+                </div>
+                <span class="pw-checkbox-count">5,342</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Engine & Mechanical</span>
+                </div>
+                <span class="pw-checkbox-count">4,816</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Exterior</span>
+                </div>
+                <span class="pw-checkbox-count">4,231</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Lights & Electrical</span>
+                </div>
+                <span class="pw-checkbox-count">3,044</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Tools & Gadgets</span>
+                </div>
+                <span class="pw-checkbox-count">1,859</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Oil & Lubricants</span>
+                </div>
+                <span class="pw-checkbox-count">711</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Audio / Video</span>
+                </div>
+                <span class="pw-checkbox-count">605</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Tyres & Wheels</span>
+                </div>
+                <span class="pw-checkbox-count">157</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Car Exhaust</span>
+                </div>
+                <span class="pw-checkbox-count">157</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Security & Sensors</span>
+                </div>
+                <span class="pw-checkbox-count">153</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Car Utilities</span>
+                </div>
+                <span class="pw-checkbox-count">85</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Other Vehicles</span>
+                </div>
+                <span class="pw-checkbox-count">15</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">General Items</span>
+                </div>
+                <span class="pw-checkbox-count">5</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Price Range -->
+          <div class="pw-filter-section">
+            <div class="pw-filter-header" onclick="toggleFilter('price-range')">
+              <span class="pw-filter-title">PRICE RANGE</span>
+              <span class="pw-filter-arrow" id="arrow-price-range">▼</span>
+            </div>
+            <div
+              class="pw-filter-content pw-filter-open"
+              id="content-price-range"
+            >
+              <div class="pw-price-inputs">
+                <input type="text" placeholder="From" class="pw-price-input" />
+                <input type="text" placeholder="To" class="pw-price-input" />
+                <button class="pw-price-btn">Go</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Make -->
+          <div class="pw-filter-section">
+            <div class="pw-filter-header" onclick="toggleFilter('make')">
+              <span class="pw-filter-title">MAKE</span>
+              <span class="pw-filter-arrow" id="arrow-make">▼</span>
+            </div>
+            <div class="pw-filter-content pw-filter-open" id="content-make">
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Toyota</span>
+                </div>
+                <span class="pw-checkbox-count">5,498</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Honda</span>
+                </div>
+                <span class="pw-checkbox-count">3,813</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Suzuki</span>
+                </div>
+                <span class="pw-checkbox-count">2,333</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Daihatsu</span>
+                </div>
+                <span class="pw-checkbox-count">900</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Nissan</span>
+                </div>
+                <span class="pw-checkbox-count">879</span>
+              </label>
+              <a href="#" class="pw-more-link">more choices...</a>
+            </div>
+          </div>
+
+          <!-- City -->
+          <div class="pw-filter-section">
+            <div class="pw-filter-header" onclick="toggleFilter('city')">
+              <span class="pw-filter-title">CITY</span>
+              <span class="pw-filter-arrow" id="arrow-city">▼</span>
+            </div>
+            <div class="pw-filter-content pw-filter-open" id="content-city">
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Riyadh</span>
+                </div>
+                <span class="pw-checkbox-count">18,842</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Dammam</span>
+                </div>
+                <span class="pw-checkbox-count">11,133</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Taif</span>
+                </div>
+                <span class="pw-checkbox-count">1,532</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Madinah</span>
+                </div>
+                <span class="pw-checkbox-count">190</span>
+              </label>
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">Sakaka</span>
+                </div>
+                <span class="pw-checkbox-count">182</span>
+              </label>
+              <a href="#" class="pw-more-link">more choices...</a>
+            </div>
+          </div>
+
+          <!-- Picture Availability -->
+          <div class="pw-filter-section">
+            <div
+              class="pw-filter-header"
+              onclick="toggleFilter('picture-availability')"
+            >
+              <span class="pw-filter-title">PICTURE AVAILABILITY</span>
+              <span class="pw-filter-arrow" id="arrow-picture-availability"
+                >▼</span
+              >
+            </div>
+            <div
+              class="pw-filter-content pw-filter-open"
+              id="content-picture-availability"
+            >
+              <label class="pw-checkbox-item">
+                <div class="pw-checkbox-wrapper">
+                  <input type="checkbox" class="pw-checkbox" />
+                  <span class="pw-checkbox-label">With Pictures</span>
+                </div>
+                <span class="pw-checkbox-count">24,775</span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="pw-main-content">
+          <!-- Top Controls -->
+          <div class="pw-top-controls">
+            <div class="pw-sort-controls">
+              <span class="pw-sort-label">Sort By:</span>
+              <select class="pw-sort-select" id="sortSelect">
+                <option>Updated Date: Recent First</option>
+                <option>Updated Date: Oldest First</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Top Sales</option>
+              </select>
+            </div>
+            <!-- <div class="pw-view-controls">
+                        <button class="pw-view-btn" id="listBtn" onclick="setViewMode('list')">LIST</button>
+                        <button class="pw-view-btn pw-view-active" id="gridBtn" onclick="setViewMode('grid')">GRID</button>
+                    </div> -->
+          </div>
+
+          <!-- Vehicle Selector -->
+          <div class="pw-vehicle-selector">
+            <span class="pw-vehicle-text"
+              >Select a vehicle to check if these parts fit</span
+            >
+            <button class="pw-vehicle-btn">
+              Select Vehicle
+              <span class="pw-vehicle-arrow"
+                ><i class="ri-arrow-down-s-line"></i
+              ></span>
+            </button>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="pw-products-grid" id="productsGrid">
+            <!-- Products will be populated by JavaScript -->
+          </div>
+
+          <!-- Pagination -->
+          <div class="pw-pagination">
+            <button class="pw-page-btn pw-page-active" onclick="setPage(1)">
+              1
+            </button>
+            <button class="pw-page-btn" onclick="setPage(2)">2</button>
+            <button class="pw-page-btn" onclick="setPage(3)">3</button>
+            <button class="pw-page-btn" onclick="setPage(4)">4</button>
+            <button class="pw-page-btn" onclick="setPage(5)">5</button>
+            <span class="pw-page-dots">...</span>
+            <span class="pw-page-next">Next | Last</span>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- View Accessories Section -->
+    <div class="vas-container">
+        <!-- View Accessories by Category -->
+        <div class="vas-section">
+            <h2 class="vas-section-title">View Accessories by Category</h2>
+            <div class="vas-grid">
+                <a href="#" class="vas-link">Car Care <span class="vas-count">(8200+)</span></a>
+                <a href="#" class="vas-link">Interior <span class="vas-count">(6600+)</span></a>
+                <a href="#" class="vas-link">Brakes <span class="vas-count">(5600+)</span></a>
+                <a href="#" class="vas-link">Engine & Mechanical <span class="vas-count">(4800+)</span></a>
+                <a href="#" class="vas-link">Exterior <span class="vas-count">(4600+)</span></a>
+                <a href="#" class="vas-link">Lights & Electrical <span class="vas-count">(2000+)</span></a>
+                <a href="#" class="vas-link">Tools & Gadgets <span class="vas-count">(1400+)</span></a>
+                <a href="#" class="vas-link">Oils & Lubricants <span class="vas-count">(1200+)</span></a>
+                <a href="#" class="vas-link">Audio / Video <span class="vas-count">(710+)</span></a>
+                <a href="#" class="vas-link">Bikes Spare Parts <span class="vas-count">(600+)</span></a>
+                <a href="#" class="vas-link">Tyres & Wheels <span class="vas-count">(490+)</span></a>
+                <a href="#" class="vas-link">Exhaust and Parts <span class="vas-count">(150+)</span></a>
+                <a href="#" class="vas-link">Security & Sensors <span class="vas-count">(150+)</span></a>
+                <a href="#" class="vas-link">Car Utilities <span class="vas-count">(80+)</span></a>
+                <a href="#" class="vas-link">Other Vehicles <span class="vas-count">(2)</span></a>
+                <a href="#" class="vas-link">General Items <span class="vas-count">(1)</span></a>
+            </div>
+        </div>
+
+        <!-- View Accessories by Sub Category -->
+        <div class="vas-section">
+            <h2 class="vas-section-title">View Accessories by Sub Category</h2>
+            <div class="vas-grid">
+                <a href="#" class="vas-link">Car Covers <span class="vas-count">(3900+)</span></a>
+                <a href="#" class="vas-link">Brake Pads <span class="vas-count">(3900+)</span></a>
+                <a href="#" class="vas-link">Car Floor Mats <span class="vas-count">(2200+)</span></a>
+                <a href="#" class="vas-link">Car Wipers <span class="vas-count">(1600+)</span></a>
+                <a href="#" class="vas-link">Car Shades <span class="vas-count">(1300+)</span></a>
+                <a href="#" class="vas-link">Brake Shoe <span class="vas-count">(1200+)</span></a>
+                <a href="#" class="vas-link">Oil Filters <span class="vas-count">(1000+)</span></a>
+                <a href="#" class="vas-link">AC Filters <span class="vas-count">(980+)</span></a>
+                <a href="#" class="vas-link">Spark Plugs <span class="vas-count">(870+)</span></a>
+                <a href="#" class="vas-link">Air Filters <span class="vas-count">(770+)</span></a>
+                <a href="#" class="vas-link">Dashboard Covers <span class="vas-count">(760+)</span></a>
+                <a href="#" class="vas-link">Engine Oil <span class="vas-count">(730+)</span></a>
+                <a href="#" class="vas-link">Air Freshener <span class="vas-count">(720+)</span></a>
+                <a href="#" class="vas-link">Car Stickers <span class="vas-count">(550+)</span></a>
+                <a href="#" class="vas-link">Trunk Mats <span class="vas-count">(490+)</span></a>
+                <a href="#" class="vas-link">Microfiber Cloth <span class="vas-count">(470+)</span></a>
+                <a href="#" class="vas-link">Tool Kits <span class="vas-count">(430+)</span></a>
+                <a href="#" class="vas-link">Car Side Mirrors <span class="vas-count">(380+)</span></a>
+                <a href="#" class="vas-link">Key Covers <span class="vas-count">(360+)</span></a>
+                <a href="#" class="vas-link">Car LED Lights <span class="vas-count">(360+)</span></a>
+            </div>
+        </div>
+
+        <!-- View Accessories by Make -->
+        <div class="vas-section">
+            <h2 class="vas-section-title">View Accessories by Make</h2>
+            <div class="vas-grid">
+                <a href="#" class="vas-link">Toyota Parts and Accessories <span class="vas-count">(6300+)</span></a>
+                <a href="#" class="vas-link">Honda Parts and Accessories <span class="vas-count">(3600+)</span></a>
+                <a href="#" class="vas-link">Suzuki Parts and Accessories <span class="vas-count">(3300+)</span></a>
+                <a href="#" class="vas-link">Daihatsu Parts and Accessories <span class="vas-count">(980+)</span></a>
+                <a href="#" class="vas-link">Nissan Parts and Accessories <span class="vas-count">(670+)</span></a>
+                <a href="#" class="vas-link">KIA Parts and Accessories <span class="vas-count">(620+)</span></a>
+                <a href="#" class="vas-link">Hyundai Parts and Accessories <span class="vas-count">(580+)</span></a>
+                <a href="#" class="vas-link">Mitsubishi Parts and Accessories <span class="vas-count">(550+)</span></a>
+                <a href="#" class="vas-link">Changan Parts and Accessories <span class="vas-count">(200+)</span></a>
+                <a href="#" class="vas-link">MG Parts and Accessories <span class="vas-count">(200+)</span></a>
+                <a href="#" class="vas-link">Mercedes Benz Parts and Accessories <span class="vas-count">(200+)</span></a>
+                <a href="#" class="vas-link">Audi Parts and Accessories <span class="vas-count">(160+)</span></a>
+                <a href="#" class="vas-link">BMW Parts and Accessories <span class="vas-count">(160+)</span></a>
+                <a href="#" class="vas-link">Lexus Parts and Accessories <span class="vas-count">(140+)</span></a>
+                <a href="#" class="vas-link">Haval Parts and Accessories <span class="vas-count">(140+)</span></a>
+                <a href="#" class="vas-link">Mazda Parts and Accessories <span class="vas-count">(120+)</span></a>
+                <a href="#" class="vas-link">DFSK Parts and Accessories <span class="vas-count">(80+)</span></a>
+                <a href="#" class="vas-link">Others Parts and Accessories <span class="vas-count">(60+)</span></a>
+                <a href="#" class="vas-link">FAW Parts and Accessories <span class="vas-count">(60+)</span></a>
+                <a href="#" class="vas-link">Proton Parts and Accessories <span class="vas-count">(60+)</span></a>
+            </div>
+        </div>
+
+        <!-- View Accessories by City -->
+        <div class="vas-section">
+            <h2 class="vas-section-title">View Accessories by City</h2>
+            <div class="vas-grid">
+                <a href="#" class="vas-link">Parts and Accessories In Karachi <span class="vas-count">(19500+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Lahore <span class="vas-count">(13100+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Okara <span class="vas-count">(1900+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Islamabad <span class="vas-count">(580+)</span></a>
+                <a href="#" class="vas-link">Car Accessories In Mirpur Khas <span class="vas-count">(440+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Rawalpindi <span class="vas-count">(440+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Sialkot <span class="vas-count">(400+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Peshawar <span class="vas-count">(90+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Faisalabad <span class="vas-count">(80+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Multan <span class="vas-count">(50+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Gujranwala <span class="vas-count">(50+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Sargodha <span class="vas-count">(10+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Abbottabad <span class="vas-count">(10+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Gujrat <span class="vas-count">(10+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Wah cantt <span class="vas-count">(30+)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Rahim Yar Khan <span class="vas-count">(9)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Bahawalpur <span class="vas-count">(8)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Mirpur A.K <span class="vas-count">(8)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Hyderabad <span class="vas-count">(7)</span></a>
+                <a href="#" class="vas-link">Parts and Accessories In Mardan <span class="vas-count">(7)</span></a>
+            </div>
+        </div>
+
+        <!-- Popular Searches -->
+        <div class="vas-section">
+            <h2 class="vas-section-title">Popular Searches</h2>
+            <div class="vas-grid">
+                <a href="#" class="vas-link">Microfiber Cloth <span class="vas-count">(480+)</span></a>
+                <a href="#" class="vas-link">Car LED Lights <span class="vas-count">(360+)</span></a>
+                <a href="#" class="vas-link">Headlights <span class="vas-count">(250+)</span></a>
+                <a href="#" class="vas-link">Car Washer <span class="vas-count">(230+)</span></a>
+                <a href="#" class="vas-link">Car Tyres <span class="vas-count">(180+)</span></a>
+                <a href="#" class="vas-link">Car Key Chains <span class="vas-count">(90+)</span></a>
+                <a href="#" class="vas-link">GPS Trackers <span class="vas-count">(60+)</span></a>
+                <a href="#" class="vas-link">Helmets <span class="vas-count">(60+)</span></a>
+                <a href="#" class="vas-link">Ceramic Coating <span class="vas-count">(50+)</span></a>
+                <a href="#" class="vas-link">Car Air Conditioner <span class="vas-count">(30+)</span></a>
+                <a href="#" class="vas-link">Car Battery <span class="vas-count">(20+)</span></a>
+                <a href="#" class="vas-link">Air Blowers <span class="vas-count">(10+)</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div id="footer"></div>
+
+    <script src="/js/parts.js"></script>
+    <script src="/js/navbar.js"></script>
+  </body>
+</html>

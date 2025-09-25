@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="/styles/checkout.css">
+    <link rel="stylesheet" href="/styles/navbar.css" />
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <div id="navbar"></div>
+
+
+    <!-- Success Alert -->
+    <div class="success-alert" id="successAlert">
+        Order placed successfully
+        <button class="success-close" onclick="closeSuccessAlert()">×</button>
+    </div>
+
+    <!-- Main Container -->
+    <div class="checkout-container">
+        <!-- Progress Steps -->
+        <div class="progress-steps">
+            <div class="step active" id="step1">
+                <div class="step-number">1</div>
+                <span>Order Summary</span>
+            </div>
+            <div class="step" id="step2">
+                <div class="step-number">2</div>
+                <span>Shipping Info</span>
+            </div>
+            <div class="step" id="step3">
+                <div class="step-number">3</div>
+                <span>Payment Method</span>
+            </div>
+        </div>
+
+        <!-- Order Summary Section -->
+        <div class="checkout-section active" id="orderSummarySection">
+            <div class="section-header">
+                <h2>You have <span id="itemCount">1</span> items in your cart</h2>
+            </div>
+
+            <div class="cart-table">
+                <div class="table-header">
+                    <div class="col-item">Item</div>
+                    <div class="col-price">Unit Price</div>
+                    <div class="col-quantity">Quantity</div>
+                    <div class="col-total">Total</div>
+                    <div class="col-action">Action</div>
+                </div>
+                
+                <div id="cartItems">
+                    <!-- Cart items will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="discount-section">
+                <div class="discount-input">
+                    <span>If you have any discount Code please enter here</span>
+                    <div class="discount-form">
+                        <input type="text" placeholder="Enter Discount Code" id="discountCode">
+                        <button class="apply-btn" onclick="applyDiscount()">Apply</button>
+                    </div>
+                </div>
+                
+                <div class="order-totals">
+                    <div class="total-row">
+                        <span>Items Total :</span>
+                        <span id="itemsTotal">$ 7,900</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Shipping charges :</span>
+                        <span id="shippingCharges">$ 149</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Sales tax 2% :</span>
+                        <span id="salesTax">$ 161</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Discount :</span>
+                        <span id="discount">0</span>
+                    </div>
+                    <div class="total-row grand-total">
+                        <span>Grand Total :</span>
+                        <span id="grandTotal">$ 8,210</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <button class="next-btn" onclick="goToShippingInfo()">Shipping Info <i class="ri-arrow-right-s-line"></i></button>
+            </div>
+        </div>
+
+        <!-- Shipping Info Section -->
+        <div class="checkout-section" id="shippingInfoSection">
+            <div class="shipping-content">
+                <div class="contact-info">
+                    <h3>Contact Info</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label>Name*</label>
+                            <input type="text" value="Mustafa Fahad" id="customerName">
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number*</label>
+                            <input type="text" placeholder="Mobile Number" id="mobileNumber">
+                        </div>
+                        <div class="form-group">
+                            <label>Comments</label>
+                            <textarea placeholder="Enter Comments" id="comments"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="shipping-info">
+                    <h3>Shipping Info</h3>
+                    <form class="shipping-form">
+                        <div class="form-group">
+                            <label>City*</label>
+                            <input type="text" placeholder="Location" id="cityInput" onclick="openCityModal()" readonly>
+                        </div>
+                        <div class="form-group" id="cityAreaGroup" style="display: none;">
+                            <label>City Area (Optional)</label>
+                            <select id="cityAreaSelect">
+                                <option value="">Select Area</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>House/Street no.*</label>
+                            <textarea placeholder="House No/Building No, Street, Area" id="address"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Landmark</label>
+                            <input type="text" placeholder="Landmark" id="landmark">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <button class="back-btn" onclick="goToOrderSummary()"><i class="ri-arrow-left-s-line"></i> Order Summary</button>
+                <button class="next-btn" onclick="goToPaymentMethod()">Process To Payment Method <i class="ri-arrow-right-s-line"></i></button>
+            </div>
+        </div>
+
+        <!-- Payment Method Section -->
+        <div class="checkout-section" id="paymentMethodSection">
+            <div class="payment-content">
+                <h3>Payment Method</h3>
+                <p>Please proceed with your payment</p>
+            </div>
+
+            <div class="section-footer">
+                <button class="back-btn" onclick="goToShippingInfo()">← Shipping Info</button>
+                <button class="next-btn" onclick="processPayment()">Complete Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- City Modal -->
+    <div class="city-modal" id="cityModal">
+        <div class="city-modal-content">
+            <div class="city-columns">
+                <div class="city-column">
+                    <h4>CITY</h4>
+                    <div class="city-list" id="cityList">
+                        <!-- Saudi cities will be populated here -->
+                    </div>
+                </div>
+                <div class="city-column">
+                    <h4>CITY AREA (OPTIONAL)</h4>
+                    <div class="area-list" id="areaList">
+                        <!-- Areas will be populated based on selected city -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" onclick="closeCityModal()">Cancel</button>
+                <button class="confirm-btn" onclick="confirmCitySelection()">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Verify Number Modal -->
+    <div class="verify-modal" id="verifyModal">
+        <div class="verify-modal-content">
+            <h3>Verify number</h3>
+            <p>A one-time password has been sent on your whatsapp number. Please enter it below to verify your number</p>
+            
+            <div class="verify-input">
+                <i class="ri-phone-line"></i>
+                <input type="text" placeholder="Enter code here" id="verifyCode">
+            </div>
+            
+            <button class="verify-btn" onclick="verifyNumber()">Verify</button>
+            
+            <div class="verify-links">
+                <a href="#" class="resend-link">Resend Code Via SMS</a>
+                <a href="#" class="resend-link">Resend Code Via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+
+
+    <!-- Selling Products -->
+    <div class="psc-container">
+        <div class="psc-header">
+            <h2>Top Selling Products</h2>
+            <a href="#" class="psc-view-all">View All</a>
+        </div>
+        
+        <div class="psc-carousel-container">
+            <button class="psc-nav-arrow psc-prev" id="pscPrevBtn">‹</button>
+            <button class="psc-nav-arrow psc-next" id="pscNextBtn">›</button>
+            
+            <div class="psc-carousel-wrapper" id="pscCarouselWrapper">
+                <!-- Product Card 1 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">25% OFF</div>
+                    <div class="psc-new-badge">NEW</div>
+                    <img src="/images/brands/OIP.jpeg" alt="Interior Protectant" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">CarsPortal Interior Protectant Spray</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 999</span>
+                            <span class="psc-original-price">$ 1,297</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">30% OFF</div>
+                    <img src="/images/brands/AUTOWashfront_713e8127-fd0f-4be2-802b-2195f71ceec5_700x700.webp" alt="Ceramic Coating" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">Ke Pioneer Professional Ceramic Coating</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 1,777</span>
+                            <span class="psc-original-price">$ 2,596</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">20% OFF</div>
+                    <img src="/images/brands/81VB7au6D2L._AC_.jpg" alt="Waterless Car Wash" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">CarsPortal Waterless Car Wash</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 699</span>
+                            <span class="psc-original-price">$ 897</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">15% OFF</div>
+                    <img src="/images/brands/Slide_pakwheels-spotless-car-wash-shampoo-pack-of-2-69417151.jpg" alt="Spotless Car Wash" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">CarsPortal Spotless Car Wash Twin Pack</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 1,199</span>
+                            <span class="psc-original-price">$ 1,399</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">35% OFF</div>
+                    <img src="/images/brands/OIP (1).jpeg" alt="Tire Shine" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">Premium Tire Shine & Protectant</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 799</span>
+                            <span class="psc-original-price">$ 1,199</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">40% OFF</div>
+                    <div class="psc-new-badge">NEW</div>
+                    <img src="/images/brands/DashboardCleaner_500ml_large.webp" alt="Dashboard Cleaner" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">Dashboard Cleaner & Conditioner</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 599</span>
+                            <span class="psc-original-price">$ 999</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">25% OFF</div>
+                    <img src="/images/brands/OIP (2).jpeg" alt="Glass Cleaner" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">Crystal Clear Glass Cleaner</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 449</span>
+                            <span class="psc-original-price">$ 599</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 8 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">30% OFF</div>
+                    <img src="/images/brands/b9a259ab-1f14-48fb-a895-b1e70467e1a0.c7b1bd16611648fba5345c63146bd8f8.webp" alt="Leather Conditioner" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">Leather Care & Conditioner</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 899</span>
+                            <span class="psc-original-price">$ 1,299</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 9 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">20% OFF</div>
+                    <div class="psc-new-badge">NEW</div>
+                    <img src="/images/brands/816r2OhrB4L.jpg" alt="Car Wax" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">Premium Car Wax & Polish</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 1,299</span>
+                            <span class="psc-original-price">$ 1,599</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 10 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">45% OFF</div>
+                    <img src="/images/brands/OIP (3).jpeg" alt="Upholstery Cleaner" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">Upholstery & Fabric Cleaner</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 699</span>
+                            <span class="psc-original-price">$ 1,299</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 11 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">35% OFF</div>
+                    <img src="/images/brands/OIP (4).jpeg" alt="Engine Degreaser" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">Heavy Duty Engine Degreaser</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 999</span>
+                            <span class="psc-original-price">$ 1,499</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 12 -->
+                <div class="psc-product-card">
+                    <div class="psc-discount-badge">50% OFF</div>
+                    <div class="psc-new-badge">NEW</div>
+                    <img src="/images/brands/51XuKnmlAvL.jpg" alt="Detailing Kit" class="psc-product-image">
+                    <div class="psc-product-info">
+                        <div class="psc-product-name">Complete Car Detailing Kit</div>
+                        <div class="psc-product-price">
+                            <span class="psc-current-price">$ 2,499</span>
+                            <span class="psc-original-price">$ 4,999</span>
+                        </div>
+                    </div>
+                    <div class="psc-hover-overlay">
+                        <button class="psc-hover-btn">Add To Cart</button>
+                        <button class="psc-hover-btn psc-view-btn">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div id="footer"></div>
+
+    <script src="/js/checkout.js"></script>
+    <script src="/js/navbar.js"></script>
+</body>
+</html>

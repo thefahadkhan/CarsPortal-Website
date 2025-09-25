@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/car-details.css" />
+  </head>
+  <body>
+
+   <!-- Header Section -->
+    <div id="navbar"></div> 
+
+  <!-- Main Content -->
+    <div class="car-detail-main-container">
+      <!-- Car Details Content -->
+      <div class="car-detail-content-wrapper">
+        <!-- Left Column - Image Gallery -->
+        <div class="car-detail-gallery-section">
+          <div class="car-detail-main-image-container">
+            <img 
+              id="carDetailMainImage" 
+              src="https://images.pexels.com/photos/337909/pexels-photo-337909.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+              alt="2023 BMW X7 Main Image"
+            />
+            <div class="car-detail-image-overlay">
+              <button class="car-detail-prev-img"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="car-detail-next-img"><i class="fa-solid fa-chevron-right"></i></button>
+              <div class="car-detail-image-counter">
+                <span id="carDetailCurrentImageNum">1</span> / <span id="carDetailTotalImages">8</span>
+              </div>
+            </div>
+            <button class="car-detail-fullscreen-btn"><i class="fa-solid fa-expand"></i></button>
+          </div>
+          
+          <div class="car-detail-thumbnail-gallery">
+            <div class="car-detail-thumbnail-track" id="carDetailThumbnailTrack">
+              <img src="https://images.pexels.com/photos/337909/pexels-photo-337909.jpeg?auto=compress&cs=tinysrgb&w=120&h=90&fit=crop" alt="Thumbnail 1" class="car-detail-thumbnail car-detail-active">
+              <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=120&h=90&fit=crop" alt="Thumbnail 2" class="car-detail-thumbnail">
+              <img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=120&h=90&fit=crop" alt="Thumbnail 3" class="car-detail-thumbnail">
+              <img src="https://images.pexels.com/photos/1719648/pexels-photo-1719648.jpeg?auto=compress&cs=tinysrgb&w=120&h=90&fit=crop" alt="Thumbnail 4" class="car-detail-thumbnail">
+              <img src="https://images.pexels.com/photos/2365572/pexels-photo-2365572.jpeg?auto=compress&cs=tinysrgb&w=120&h=90&fit=crop" alt="Thumbnail 5" class="car-detail-thumbnail">
+              <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=120&h=90&fit=crop" alt="Thumbnail 6" class="car-detail-thumbnail">
+              <img src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=120&h=90&fit=crop" alt="Thumbnail 7" class="car-detail-thumbnail">
+              <img src="https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=120&h=90&fit=crop" alt="Thumbnail 8" class="car-detail-thumbnail">
+            </div>
+          </div>
+
+          <div class="car-detail-media-actions">
+            <button class="car-detail-media-btn car-detail-video-btn">
+              <ion-icon name="play-circle-outline"></ion-icon>
+              <span>Watch Video Tour</span>
+            </button>
+            <button class="car-detail-media-btn car-detail-vr-btn">
+              <i class="fa-solid fa-vr-cardboard"></i>
+              <span>360° View</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column - Car Information -->
+        <div class="car-detail-info-section">
+          <div class="car-detail-header">
+            <div class="car-detail-status-badges">
+              <span class="car-detail-status-badge car-detail-luxury">LUXURY PICK</span>
+              <span class="car-detail-status-badge car-detail-certified">CERTIFIED</span>
+            </div>
+            <h1 class="car-detail-title">2023 BMW X7 xDrive40i Sports Activity</h1>
+            <div class="car-detail-basic-info">
+              <span class="car-detail-mileage"><i class="fa-solid fa-road"></i> 12,450 miles</span>
+              <span class="car-detail-location"><i class="fa-solid fa-map-marker-alt"></i> Beverly Hills, CA</span>
+              <span class="car-detail-stock"><i class="fa-solid fa-hashtag"></i> Stock #BX7231</span>
+            </div>
+          </div>
+
+          <div class="car-detail-pricing-section">
+            <div class="car-detail-price-main">
+              <span class="car-detail-current-price">$76,800</span>
+              <span class="car-detail-original-price">$82,500</span>
+            </div>
+            <div class="car-detail-savings-info">
+              <span class="car-detail-savings">You Save $5,700</span>
+              <span class="car-detail-market-price">Below Market Price</span>
+            </div>
+            <div class="car-detail-monthly-payment">
+              <span>Est. Payment: <strong>$1,285/mo</strong></span>
+              <a href="#" class="car-detail-calculate-payment">Calculate Payment</a>
+            </div>
+          </div>
+
+          <div class="car-detail-key-features">
+            <h3>Key Features</h3>
+            <div class="car-detail-features-grid">
+              <div class="car-detail-feature-item">
+                <i class="fa-solid fa-cogs"></i>
+                <span>Automatic Transmission</span>
+              </div>
+              <div class="car-detail-feature-item">
+                <i class="fa-solid fa-gas-pump"></i>
+                <span>Premium Gasoline</span>
+              </div>
+              <div class="car-detail-feature-item">
+                <i class="fa-solid fa-palette"></i>
+                <span>Jet Black</span>
+              </div>
+              <div class="car-detail-feature-item">
+                <i class="fa-solid fa-chair"></i>
+                <span>7-Seater</span>
+              </div>
+              <div class="car-detail-feature-item">
+                <i class="fa-solid fa-snowflake"></i>
+                <span>All Wheel Drive</span>
+              </div>
+              <div class="car-detail-feature-item">
+                <i class="fa-solid fa-shield-alt"></i>
+                <span>Safety Features</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="car-detail-action-buttons">
+            <button class="car-detail-primary-btn car-detail-test-drive-btn">
+              <i class="fa-solid fa-calendar-check"></i>
+              Schedule Test Drive
+            </button>
+            <button class="car-detail-secondary-btn car-detail-contact-seller-btn">
+              <i class="fa-solid fa-phone"></i>
+              Contact Seller
+            </button>
+            <div class="car-detail-quick-actions">
+              <button class="car-detail-quick-btn car-detail-save-btn">
+                <i class="ri-save-3-line"></i>
+                <span>Save</span>
+              </button>
+              <button class="car-detail-quick-btn car-detail-compare-btn">
+                <ion-icon name="git-compare-outline"></ion-icon>
+                <span>Compare</span>
+              </button>
+              <button class="car-detail-quick-btn car-detail-share-btn">
+                <i class="fa-solid fa-share-alt"></i>
+                <span>Share</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="car-detail-dealer-info">
+            <div class="car-detail-dealer-card">
+              <div class="car-detail-dealer-header">
+                <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="Dealer Logo" class="car-detail-dealer-logo">
+                <div class="car-detail-dealer-details">
+                  <h4>Premium Auto Gallery</h4>
+                  <div class="car-detail-dealer-rating">
+                    <div class="car-detail-stars">★★★★★</div>
+                    <span>4.8 (324 reviews)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="car-detail-dealer-contact">
+                <p><i class="fa-solid fa-map-marker-alt"></i> 8920 Wilshire Blvd, Beverly Hills, CA 90211</p>
+                <p><i class="fa-solid fa-phone"></i> (310) 555-0123</p>
+                <p><i class="fa-solid fa-clock"></i> Open until 9:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Specifications Section -->
+      <div class="car-detail-specs-section">
+        <div class="car-detail-specs-tabs">
+          <button class="car-detail-spec-tab-btn car-detail-active" data-tab="overview">Overview</button>
+          <button class="car-detail-spec-tab-btn" data-tab="specifications">Specifications</button>
+          <button class="car-detail-spec-tab-btn" data-tab="features">Features & Options</button>
+          <button class="car-detail-spec-tab-btn" data-tab="history">Vehicle History</button>
+          <button class="car-detail-spec-tab-btn" data-tab="financing">Financing</button>
+        </div>
+
+        <div class="car-detail-specs-content">
+          <!-- Overview Tab -->
+          <div id="carDetailOverview" class="car-detail-spec-tab-content car-detail-active">
+            <div class="car-detail-overview-grid">
+              <div class="car-detail-overview-card">
+                <h4>Vehicle Details</h4>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Year:</span>
+                  <span class="car-detail-value">2023</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Make:</span>
+                  <span class="car-detail-value">BMW</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Model:</span>
+                  <span class="car-detail-value">X7</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Trim:</span>
+                  <span class="car-detail-value">xDrive40i Sports Activity</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Body Style:</span>
+                  <span class="car-detail-value">SUV</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Mileage:</span>
+                  <span class="car-detail-value">12,450 miles</span>
+                </div>
+              </div>
+
+              <div class="car-detail-overview-card">
+                <h4>Engine & Performance</h4>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Engine:</span>
+                  <span class="car-detail-value">3.0L 6-Cylinder Turbo</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Horsepower:</span>
+                  <span class="car-detail-value">335 hp</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Torque:</span>
+                  <span class="car-detail-value">330 lb-ft</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Transmission:</span>
+                  <span class="car-detail-value">8-Speed Automatic</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Drivetrain:</span>
+                  <span class="car-detail-value">All Wheel Drive</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Fuel Economy:</span>
+                  <span class="car-detail-value">21 City / 26 Hwy MPG</span>
+                </div>
+              </div>
+
+              <div class="car-detail-overview-card">
+                <h4>Exterior</h4>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Exterior Color:</span>
+                  <span class="car-detail-value">Jet Black</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Wheels:</span>
+                  <span class="car-detail-value">21" M Sport Alloy</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Sunroof:</span>
+                  <span class="car-detail-value">Panoramic</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Headlights:</span>
+                  <span class="car-detail-value">Adaptive LED</span>
+                </div>
+              </div>
+
+              <div class="car-detail-overview-card">
+                <h4>Interior</h4>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Interior Color:</span>
+                  <span class="car-detail-value">Cognac Leather</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Seating:</span>
+                  <span class="car-detail-value">7-Passenger</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Upholstery:</span>
+                  <span class="car-detail-value">Premium Leather</span>
+                </div>
+                <div class="car-detail-detail-row">
+                  <span class="car-detail-label">Climate:</span>
+                  <span class="car-detail-value">4-Zone Automatic</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specifications Tab -->
+          <div id="carDetailSpecifications" class="car-detail-spec-tab-content">
+            <div class="car-detail-specifications-grid">
+              <div class="car-detail-spec-category">
+                <h4>Engine</h4>
+                <div class="car-detail-spec-list">
+                  <div class="car-detail-spec-item">
+                    <span class="car-detail-spec-label">Type:</span>
+                    <span class="car-detail-spec-value">Inline-6 Turbo</span>
+                  </div>
+                  <div class="car-detail-spec-item">
+                    <span class="car-detail-spec-label">Displacement:</span>
+                    <span class="car-detail-spec-value">3.0L (2998cc)</span>
+                  </div>
+                  <div class="car-detail-spec-item">
+                    <span class="car-detail-spec-label">Power:</span>
+                    <span class="car-detail-spec-value">335 hp @ 5500-6500 rpm</span>
+                  </div>
+                  <div class="car-detail-spec-item">
+                    <span class="car-detail-spec-label">Torque:</span>
+                    <span class="car-detail-spec-value">330 lb-ft @ 1500-5200 rpm</span>
+                  </div>
+                  <div class="car-detail-spec-item">
+                    <span class="car-detail-spec-label">Fuel System:</span>
+                    <span class="car-detail-spec-value">Direct Injection</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="car-detail-spec-category">
+                <h4>Performance</h4>
+                <div class="car-detail-spec-list">
+                  <div class="car-detail-spec-item">
+                    <span class="car-detail-spec-label">0-60 mph:</span>
+                    <span class="car-detail-spec-value">5.8 seconds</span>
+                  </div>
+                  <div class="car-detail-spec-item">
+                    <span class="car-detail-spec-label">Top Speed:</span>
+                    <span class="car-detail-spec-value">130 mph</span>
+                  </div>
+                  <div class="car-detail-spec-item">
+                    <span class="car-detail-spec-label">Towing Capacity:</span>
+                    <span class="car-detail-spec-value">7500 lbs</span>
+                  </div>
+                  <div class="car-detail-spec-item">
+                    <span class="car-detail-spec-label">Curb Weight:</span>
+                    <span class="car-detail-spec-value">5390 lbs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features Tab -->
+          <div id="carDetailFeatures" class="car-detail-spec-tab-content">
+            <div class="car-detail-features-categories">
+              <div class="car-detail-feature-category">
+                <h4>Standard Features</h4>
+                <div class="car-detail-feature-list">
+                  <div class="car-detail-feature-list-item">✓ BMW Live Cockpit Professional</div>
+                  <div class="car-detail-feature-list-item">✓ Gesture Control</div>
+                  <div class="car-detail-feature-list-item">✓ Panoramic Sky Lounge LED Roof</div>
+                  <div class="car-detail-feature-list-item">✓ Comfort Access Keyless Entry</div>
+                  <div class="car-detail-feature-list-item">✓ Power Tailgate</div>
+                  <div class="car-detail-feature-list-item">✓ Adaptive LED Headlights</div>
+                </div>
+              </div>
+
+              <div class="car-detail-feature-category">
+                <h4>Technology & Infotainment</h4>
+                <div class="car-detail-feature-list">
+                  <div class="car-detail-feature-list-item">✓ 12.3" Touchscreen Display</div>
+                  <div class="car-detail-feature-list-item">✓ BMW iDrive 7.0</div>
+                  <div class="car-detail-feature-list-item">✓ Wireless Apple CarPlay</div>
+                  <div class="car-detail-feature-list-item">✓ Android Auto</div>
+                  <div class="car-detail-feature-list-item">✓ Harman Kardon Surround Sound</div>
+                  <div class="car-detail-feature-list-item">✓ Wireless Charging</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vehicle History Tab -->
+          <div id="carDetailHistory" class="car-detail-spec-tab-content">
+            <div class="car-detail-history-content">
+              <div class="car-detail-history-card">
+                <h4>Vehicle History Report</h4>
+                <div class="car-detail-history-badges">
+                  <span class="car-detail-badge car-detail-clean">Clean Title</span>
+                  <span class="car-detail-badge car-detail-verified">Verified Mileage</span>
+                  <span class="car-detail-badge car-detail-no-accidents">No Accidents Reported</span>
+                  <span class="car-detail-badge car-detail-one-owner">Single Owner</span>
+                </div>
+                
+                <div class="car-detail-history-timeline">
+                  <div class="car-detail-timeline-item">
+                    <div class="car-detail-timeline-date">Jan 2023</div>
+                    <div class="car-detail-timeline-content">
+                      <h5>Vehicle Purchased</h5>
+                      <p>First registered to owner in Beverly Hills, CA</p>
+                    </div>
+                  </div>
+                  <div class="car-detail-timeline-item">
+                    <div class="car-detail-timeline-date">Mar 2023</div>
+                    <div class="car-detail-timeline-content">
+                      <h5>Service Record</h5>
+                      <p>Regular maintenance at BMW of North America</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="car-detail-view-full-report-btn">View Full CARFAX Report</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Financing Tab -->
+          <div id="carDetailFinancing" class="car-detail-spec-tab-content">
+            <div class="car-detail-financing-content">
+              <div class="car-detail-financing-calculator">
+                <h4>Loan Calculator</h4>
+                <form class="car-detail-calculator-form">
+                  <div class="car-detail-calc-row">
+                    <div class="car-detail-calc-field">
+                      <label for="carDetailVehiclePrice">Vehicle Price</label>
+                      <input type="text" id="carDetailVehiclePrice" value="$76,800" readonly>
+                    </div>
+                    <div class="car-detail-calc-field">
+                      <label for="carDetailDownPayment">Down Payment</label>
+                      <input type="text" id="carDetailDownPayment" placeholder="$10,000">
+                    </div>
+                  </div>
+                  <div class="car-detail-calc-row">
+                    <div class="car-detail-calc-field">
+                      <label for="carDetailLoanTerm">Loan Term</label>
+                      <select id="carDetailLoanTerm">
+                        <option value="36">36 months</option>
+                        <option value="48">48 months</option>
+                        <option value="60" selected>60 months</option>
+                        <option value="72">72 months</option>
+                      </select>
+                    </div>
+                    <div class="car-detail-calc-field">
+                      <label for="carDetailInterestRate">Interest Rate</label>
+                      <input type="text" id="carDetailInterestRate" placeholder="3.9%">
+                    </div>
+                  </div>
+                  <button type="button" class="car-detail-calculate-btn">Calculate Payment</button>
+                </form>
+                
+                <div class="car-detail-payment-result" id="carDetailPaymentResult">
+                  <div class="car-detail-result-item">
+                    <span class="car-detail-result-label">Estimated Monthly Payment:</span>
+                    <span class="car-detail-result-value" id="carDetailMonthlyPayment">$1,285</span>
+                  </div>
+                  <div class="car-detail-result-item">
+                    <span class="car-detail-result-label">Total Interest:</span>
+                    <span class="car-detail-result-value" id="carDetailTotalInterest">$13,500</span>
+                  </div>
+                  <div class="car-detail-result-item">
+                    <span class="car-detail-result-label">Total Amount:</span>
+                    <span class="car-detail-result-value" id="carDetailTotalAmount">$90,300</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Similar Vehicles Section -->
+      <div class="car-detail-similar-vehicles-section">
+        <h3>Similar Vehicles You Might Like</h3>
+        <div class="car-detail-similar-cars-grid" id="carDetailSimilarCarsGrid">
+          <!-- Similar cars will be generated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Test Drive Scheduling -->
+    <div id="carDetailTestDriveModal" class="car-detail-modal">
+      <div class="car-detail-modal-content">
+        <div class="car-detail-modal-header">
+          <h3>Schedule Test Drive</h3>
+          <button class="car-detail-close-modal">&times;</button>
+        </div>
+        <div class="car-detail-modal-body">
+          <form class="car-detail-test-drive-form">
+            <div class="car-detail-form-row">
+              <div class="car-detail-form-field">
+                <label for="carDetailFirstName">First Name *</label>
+                <input type="text" id="carDetailFirstName" required>
+              </div>
+              <div class="car-detail-form-field">
+                <label for="carDetailLastName">Last Name *</label>
+                <input type="text" id="carDetailLastName" required>
+              </div>
+            </div>
+            <div class="car-detail-form-row">
+              <div class="car-detail-form-field">
+                <label for="carDetailEmail">Email *</label>
+                <input type="email" id="carDetailEmail" required>
+              </div>
+              <div class="car-detail-form-field">
+                <label for="carDetailPhone">Phone *</label>
+                <input type="tel" id="carDetailPhone" required>
+              </div>
+            </div>
+            <div class="car-detail-form-row">
+              <div class="car-detail-form-field">
+                <label for="carDetailPreferredDate">Preferred Date *</label>
+                <input type="date" id="carDetailPreferredDate" required>
+              </div>
+              <div class="car-detail-form-field">
+                <label for="carDetailPreferredTime">Preferred Time *</label>
+                <select id="carDetailPreferredTime" required>
+                  <option value="">Select Time</option>
+                  <option value="9:00 AM">9:00 AM</option>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="1:00 PM">1:00 PM</option>
+                  <option value="2:00 PM">2:00 PM</option>
+                  <option value="3:00 PM">3:00 PM</option>
+                  <option value="4:00 PM">4:00 PM</option>
+                  <option value="5:00 PM">5:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="car-detail-form-field">
+              <label for="carDetailComments">Comments</label>
+              <textarea id="carDetailComments" rows="3" placeholder="Any specific requests or questions..."></textarea>
+            </div>
+            <div class="car-detail-form-actions">
+              <button type="button" class="car-detail-cancel-btn">Cancel</button>
+              <button type="submit" class="car-detail-confirm-btn">Schedule Test Drive</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div id="footer"></div>
+
+
+    <script src="/js/navbar.js"></script>
+    <script src="/js/car-details.js"></script>
+  </body>
+</html>

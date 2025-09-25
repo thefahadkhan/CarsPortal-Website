@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f8f9fa;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+.brandlogos-main-title {
+    text-align: left;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+.brandlogos-grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 16px;
+    /* max-width: 1200px;
+    margin: 0 auto; */
+    margin-bottom: 50px;
+}
+
+.brandlogos-single-box {
+    background: white;
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #e9ecef;
+}
+
+.brandlogos-single-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-color: #dee2e6;
+}
+
+.brandlogos-icon-area {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.brandlogos-single-box:hover .brandlogos-icon-area {
+    background: #e9ecef;
+}
+
+.brandlogos-svg-icon {
+    width: 32px;
+    height: 32px;
+    stroke: #495057;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.brandlogos-company-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+    line-height: 1.4;
+}
+
+
+/* Breadcrumb Navigation */
+.breadcrumb-container {
+    margin-top: 160px;
+    background: white;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.breadcrumb-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.breadcrumb-current {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .brandlogos-grid-container {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .brandlogos-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+    
+    .brandlogos-single-box {
+        padding: 20px 12px;
+    }
+    
+    .brandlogos-icon-area {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px;
+    }
+    
+    .brandlogos-svg-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .brandlogos-company-name {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brandlogos-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .brandlogos-main-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+}

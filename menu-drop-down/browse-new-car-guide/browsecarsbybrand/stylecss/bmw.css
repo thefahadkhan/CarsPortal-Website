@@ -1,0 +1,715 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
+    background-color: #f8f9fa;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* Hero Banner */
+.hero-banner {
+    width: 100%;
+    margin-top: 125px;
+    position: relative;
+    height: 320px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+    background-image: url("https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&w=1200");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 58, 138, 0.8);
+  }
+  
+  .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1280px;
+      padding: 0 2rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+  }
+  
+  .hero-btn {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1f2937;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+  }
+  
+  .hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+  }
+  
+  .hero-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+  }
+
+
+
+/* Toyota Guide Section */
+.toyota-cars-guide-wrapper {
+    padding: 40px 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* margin-top: 150px; */
+}
+
+.toyota-main-heading {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.toyota-guide-subtitle {
+    text-align: left;
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.toyota-guide-subtitle .highlight-text {
+    color: #124d99;
+}
+
+/* Tab Navigation */
+.toyota-tab-navigation {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.toyota-tab-button {
+    background: none;
+    border: none;
+    padding: 12px 0;
+    margin-right: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.toyota-tab-button:hover {
+    color: #333;
+}
+
+.toyota-tab-button.toyota-tab-active {
+    color: #1a1a1a;
+}
+
+.toyota-tab-button.toyota-tab-active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #124d99;
+    border-radius: 2px;
+}
+
+/* Cards Container */
+.toyota-cards-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.toyota-nav-button {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    color: #666;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.toyota-nav-button:hover {
+    background: #f5f5f5;
+    border-color: #ccc;
+    color: #333;
+}
+
+.toyota-nav-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.toyota-cards-wrapper {
+    flex: 1;
+    overflow: hidden;
+}
+
+.toyota-tab-content {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.toyota-tab-content.toyota-content-active {
+    display: grid;
+}
+
+/* Car Cards */
+.toyota-car-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toyota-car-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.toyota-car-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    overflow: hidden;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.toyota-car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.toyota-car-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 15px 20px 8px 20px;
+}
+
+.toyota-car-price {
+    font-size: 14px;
+    color: #666;
+    margin: 0 20px 12px 20px;
+    font-weight: 600;
+}
+
+.toyota-car-rating {
+    margin: 0 20px 20px 20px;
+}
+
+.toyota-rating-stars {
+    color: #ff9500;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+
+/* Used Toyota Section */
+.used-toyota {
+    padding: 60px 0;
+    background: white;
+}
+
+.used-toyota h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.price-table {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+td span {
+    color: #124d99;
+    font-weight: bold;
+}
+
+th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #124d99;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    font-weight: 500;
+}
+
+tr:hover {
+    background: #f8fafc;
+}
+
+/* Search Suggestions Section */
+.search-suggestions {
+    padding: 60px 0;
+    background: #f8fafc;
+}
+
+.search-suggestions h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.search-category {
+    margin-bottom: 40px;
+}
+
+.search-category h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: #1e3a8a;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Car News Section */
+/* News Section */
+.news-section {
+    padding: 3rem 0;
+    background: white;
+}
+
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.news-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.news-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.featured-article {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.featured-image {
+    width: 100%;
+    height: 415px;
+    object-fit: cover;
+}
+
+.featured-content {
+    padding: 2rem;
+    /* position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: white;
+      padding: 2rem; */
+}
+
+.view-all-btn {
+    background: white;
+    color: #124d99;
+    padding: 8px 20px;
+    border: 1px solid #124d99;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .view-all-btn:hover {
+    background: #124d99;
+    color: white;
+  }
+
+.featured-tag {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.featured-description {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.read-more-link {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.read-more-link:hover {
+    color: #93c5fd;
+}
+
+.article-meta {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    display: flex;
+    gap: 5px;
+}
+
+.news-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.news-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.news-item:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+.news-thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.news-content-text h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.news-content-text p {
+    font-size: 0.8rem;
+    color: #6b7280;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.news-category {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.news-meta {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* About Toyota Section */
+.about-toyota {
+    padding: 60px 0;
+    background: #f8fafc;
+}
+
+.about-toyota h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.toyota-logo img {
+    width: 180px;
+    height: 165px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 10px;
+}
+
+.about-text strong {
+    color: #124d99;
+    font-weight: 600;
+}
+
+.read-more {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: #124d99;;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .toyota-tab-content.toyota-content-active {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .toyota-guide h1 {
+        font-size: 2rem;
+    }
+
+    .tab-content {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .toyota-logo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 10px 8px;
+    }
+
+    .toyota-tab-content.toyota-content-active {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .toyota-tab-button {
+        margin-right: 20px;
+        font-size: 14px;
+    }
+    
+    .toyota-main-heading {
+        font-size: 22px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .toyota-guide h1 {
+        font-size: 1.6rem;
+    }
+
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .car-card {
+        padding: 15px;
+    }
+
+    .car-image {
+        height: 150px;
+    }
+
+    .tags {
+        gap: 8px;
+    }
+
+    .tag {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .news-item {
+        flex-direction: column;
+    }
+
+    .about-content {
+        padding: 25px;
+    }
+
+    .toyota-tab-content.toyota-content-active {
+        grid-template-columns: 1fr;
+    }
+    
+    .toyota-cards-container {
+        flex-direction: column;
+    }
+    
+    .toyota-nav-button {
+        display: none;
+    }
+}

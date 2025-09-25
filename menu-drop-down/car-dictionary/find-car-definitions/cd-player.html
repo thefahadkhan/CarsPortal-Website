@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="../../car-dictionary/find-car-definitions/styles-css/buetooth.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="bt-breadcrumb">
+            <a href="#" class="bt-breadcrumb-link">Home</a>
+            <span class="bt-breadcrumb-separator">›</span>
+            <a href="#" class="bt-breadcrumb-link">Used Cars</a>
+            <span class="bt-breadcrumb-separator">›</span>
+            <a href="#" class="bt-breadcrumb-link">Car Definitions</a>
+            <span class="bt-breadcrumb-separator">›</span>
+            <span class="bt-breadcrumb-current">Bluetooth</span>
+        </nav>
+
+        <!-- Main Heading -->
+        <h1 class="bt-main-heading">CD Player</h1>
+
+        <!-- Dropdown Section -->
+        <div class="bt-definition-section">
+            <div class="bt-dropdown-header" onclick="toggleBluetoothDropdown()">
+                <h3 class="bt-dropdown-title">What does CD Player mean?</h3>
+                <svg class="bt-chevron-icon" id="btChevronIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+            <div class="bt-dropdown-content" id="btDropdownContent">
+                <div class="bt-dropdown-inner">
+                    <p class="bt-definition-text">
+                        A device that reads compact discs, or as it is known as a CD
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer"></div>
+
+    <script src="../../car-dictionary/find-car-definitions/js/buetooth.js"></script>
+    <script src="/js/navbar.js"></script>
+</body>
+</html>
